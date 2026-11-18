@@ -2,41 +2,65 @@
 
 :root {
   color-scheme: light;
-  --ink: #20231e;
-  --ink-soft: #4b4f46;
-  --paper: #faf7f1;
-  --panel: #fffdf9;
-  --line: #ded5c6;
-  --trust: #0f5a8c;
-  --trust-soft: #e6eef4;
+  --ink: #241d33;
+  --ink-soft: #4c4757;
+  --paper: #fbfafc;
+  --panel: #ffffff;
+  --line: #e3deee;
+  --trust: #6b4fa8;
+  --trust-soft: #eee9f9;
   --on-trust: #ffffff;
-  --safe: #1b6b45;
-  --safe-soft: #e8f1e8;
-  --attention: #faf0d7;
-  --attention-line: #e2d0a8;
-  --footer-bg: #20231e;
-  --footer-ink: #faf7f1;
-  --footer-soft: #d9d3c7;
+  --cta: #e7a519;
+  --on-cta: #2a1e50;
+  --brand: #2a1e50;
+  --safe: #147a5a;
+  --safe-soft: #e3f3ec;
+  --attention: #fbf0cf;
+  --attention-line: #e8d49a;
+  --hero: #f2edfa;
+  --mist: #f4f1fa;
+  --tint-lavender: #ece7fb;
+  --tint-yellow: #fbf0cf;
+  --tint-mint: #e0f3e9;
+  --tint-blue: #e3f2fb;
+  --tint-peach: #fbe8dd;
+  --tint-pink: #fbe6ef;
+  --footer-bg: #2a1e50;
+  --footer-ink: #fbf8ff;
+  --footer-soft: #d3c9e8;
+  --shadow-soft: 0 24px 40px rgba(110, 90, 160, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --ink: #f1e9dd;
-    --ink-soft: #c8bcaa;
-    --paper: #191612;
-    --panel: #211d17;
-    --line: #3b342a;
-    --trust: #e6c08a;
-    --trust-soft: #332c21;
-    --on-trust: #1b1712;
-    --safe: #a3c9a8;
-    --safe-soft: #232b22;
-    --attention: #352c1c;
+    --ink: #f3edfb;
+    --ink-soft: #c8bdd8;
+    --paper: #16121f;
+    --panel: #1f1929;
+    --line: #3a3346;
+    --trust: #c9b6f0;
+    --trust-soft: #2c2540;
+    --on-trust: #1b1428;
+    --cta: #e7a519;
+    --on-cta: #241a3a;
+    --brand: #f3edfb;
+    --safe: #9ed3b5;
+    --safe-soft: #1e2b25;
+    --attention: #3a2f1a;
     --attention-line: #5c4a2c;
-    --footer-bg: #211d17;
-    --footer-ink: #f1e9dd;
-    --footer-soft: #c8bcaa;
+    --hero: #1f1a2b;
+    --mist: #241e31;
+    --tint-lavender: #2c2540;
+    --tint-yellow: #3a2f1a;
+    --tint-mint: #1e2f27;
+    --tint-blue: #1c2b36;
+    --tint-peach: #38261f;
+    --tint-pink: #36202b;
+    --footer-bg: #241a3d;
+    --footer-ink: #fbf8ff;
+    --footer-soft: #cbbfe0;
+    --shadow-soft: 0 24px 40px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -53,10 +77,22 @@
   --color-safe-soft: var(--safe-soft);
   --color-attention: var(--attention);
   --color-attention-line: var(--attention-line);
+  --color-cta: var(--cta);
+  --color-on-cta: var(--on-cta);
+  --color-brand: var(--brand);
+  --color-hero: var(--hero);
+  --color-mist: var(--mist);
+  --color-tint-lavender: var(--tint-lavender);
+  --color-tint-yellow: var(--tint-yellow);
+  --color-tint-mint: var(--tint-mint);
+  --color-tint-blue: var(--tint-blue);
+  --color-tint-peach: var(--tint-peach);
+  --color-tint-pink: var(--tint-pink);
   --color-footer: var(--footer-bg);
   --color-footer-ink: var(--footer-ink);
   --color-footer-soft: var(--footer-soft);
   --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-geologica), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -76,6 +112,8 @@
   h1,
   h2,
   h3 {
+    color: var(--brand);
+    font-family: var(--font-brand);
     line-height: 1.15;
     text-wrap: balance;
   }
@@ -136,20 +174,21 @@
     gap: 0.5rem;
     border: 2px solid transparent;
     border-radius: 999px;
-    background-color: var(--trust);
-    color: var(--on-trust);
+    background-color: var(--cta);
+    color: var(--on-cta);
     padding: 0.7rem 1.4rem;
-    font-weight: 700;
+    font-family: var(--font-brand);
+    font-weight: 600;
     text-decoration: none;
     transition: filter 140ms ease, background-color 140ms ease;
   }
 
   .button:hover {
-    filter: brightness(1.06);
+    filter: brightness(1.04);
   }
 
   .button-quiet {
-    border: 2px solid var(--trust);
+    border-color: var(--trust);
     background-color: transparent;
     color: var(--trust);
   }
@@ -157,6 +196,14 @@
   .button-quiet:hover {
     background-color: var(--trust-soft);
     filter: none;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .bg-footer :focus-visible {
+    outline-color: var(--footer-ink);
   }
 
   .skip-link {
@@ -219,12 +266,15 @@
     --paper: #ffffff;
     --panel: #ffffff;
     --line: #8a8a8a;
-    --trust: #0f5a8c;
+    --trust: #000000;
     --safe: #145c39;
     --safe-soft: #ffffff;
     --trust-soft: #ffffff;
     --attention: #ffffff;
     --attention-line: #8a8a8a;
+    --brand: #000000;
+    --hero: #ffffff;
+    --mist: #ffffff;
   }
 
   @page {
@@ -249,6 +299,10 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .shadow-soft {
+    box-shadow: none;
   }
 
   h1,

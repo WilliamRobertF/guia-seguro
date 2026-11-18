@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Atkinson_Hyperlegible, Geologica } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -8,6 +8,13 @@ const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-atkinson",
+  display: "swap",
+});
+
+const geologica = Geologica({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-geologica",
   display: "swap",
 });
 
@@ -40,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${atkinson.variable} h-full`}>
+    <html lang="pt-BR" className={`${atkinson.variable} ${geologica.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <a href="#conteudo" className="skip-link">
           Ir para o conteúdo

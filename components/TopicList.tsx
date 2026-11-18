@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { topics } from "@/content/topics";
+import { TopicIcon } from "./TopicIcon";
 
 export function TopicList() {
   return (
@@ -13,10 +14,11 @@ export function TopicList() {
           <li key={topic.slug} className="border-b border-line">
             <Link
               href={`/temas/${topic.slug}/`}
-              className="group -mx-3 flex min-h-11 max-w-[49ch] items-start justify-between gap-4 rounded-md px-3 py-6 no-underline transition-colors hover:bg-panel"
+              className="group -mx-3 flex min-h-11 max-w-[49ch] items-start justify-between gap-4 rounded-xl px-3 py-6 no-underline transition-colors hover:bg-mist"
             >
-              <span className="flex flex-col gap-1">
-                <span className="text-xl font-bold text-ink group-hover:text-trust group-hover:underline">
+              <TopicIcon slug={topic.slug} />
+              <span className="flex flex-1 flex-col gap-1">
+                <span className="font-brand text-xl font-bold text-brand group-hover:text-trust group-hover:underline">
                   {topic.title}
                 </span>
                 <span className="text-ink-soft">{topic.summary}</span>
@@ -27,7 +29,7 @@ export function TopicList() {
                 viewBox="0 0 20 20"
                 aria-hidden="true"
                 focusable="false"
-                className="no-print mt-1.5 shrink-0 text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-trust"
+                className="no-print mt-2 shrink-0 text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-trust"
               >
                 <path
                   d="M4 10h12M11 5l5 5-5 5"

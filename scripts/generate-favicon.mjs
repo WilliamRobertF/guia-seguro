@@ -1,8 +1,8 @@
 import { writeFile } from "node:fs/promises";
 
 const size = 32;
-const trust = [0x0f, 0x5a, 0x8c];
-const white = [0xff, 0xff, 0xff];
+const background = [0x2a, 0x1e, 0x50];
+const check = [0xe7, 0xa5, 0x19];
 const radius = 7;
 const samples = 4;
 
@@ -42,7 +42,7 @@ for (let y = 0; y < size; y += 1) {
           segmentDistance(px, py, 8.5, 17.5, 14, 23),
           segmentDistance(px, py, 14, 23, 24, 9.5),
         );
-        const color = checkDistance <= 1.9 ? white : trust;
+        const color = checkDistance <= 1.9 ? check : background;
 
         covered += 1;
         red += color[0];

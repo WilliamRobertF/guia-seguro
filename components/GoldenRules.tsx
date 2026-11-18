@@ -3,7 +3,7 @@ import { goldenRules } from "@/content/rules";
 export function GoldenRules() {
   return (
     <section aria-labelledby="regras-de-ouro" className="mt-20 sm:mt-24">
-      <span aria-hidden="true" className="no-print mb-3 block h-1 w-9 rounded-full bg-safe" />
+      <span aria-hidden="true" className="no-print mb-3 block h-1 w-9 rounded-full bg-trust" />
       <h2 id="regras-de-ouro" className="text-2xl font-bold sm:text-3xl">
         Três regras de ouro
       </h2>

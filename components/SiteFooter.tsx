@@ -4,11 +4,33 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="no-print mt-24 bg-footer text-footer-ink">
+    <footer className="no-print mt-24 rounded-t-[2rem] bg-footer text-footer-ink">
       <div className="shell py-12 sm:py-14">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:gap-12">
           <div>
-            <p className="text-[1.75rem] font-bold">Guia Seguro</p>
+            <div className="flex items-center gap-3">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M5 4h20a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-9l-6 5v-5H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"
+                  fill="var(--cta)"
+                />
+                <path
+                  d="M9 12l4 4 8-8"
+                  fill="none"
+                  stroke="var(--on-cta)"
+                  strokeWidth="2.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <p className="font-brand text-[1.75rem] font-bold">Guia Seguro</p>
+            </div>
             <p className="mt-4 text-footer-soft">Projeto de extensão universitária</p>
             <p className="mt-1 text-footer-soft">
               Conteúdo informativo. O site não dá parecer jurídico.
