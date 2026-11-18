@@ -28,40 +28,42 @@ const uniqueSources = Array.from(
 
 export default function AboutPage() {
   return (
-    <main id="conteudo" className="mx-auto w-full max-w-3xl px-5 pb-16 sm:px-8">
-      <header className="pt-10 sm:pt-14">
-        <h1 className="text-3xl font-bold sm:text-4xl">{aboutPage.title}</h1>
-      </header>
+    <main id="conteudo" className="shell pb-16">
+      <div className="max-w-[49ch]">
+        <header className="pt-10 sm:pt-14">
+          <h1 className="text-3xl font-bold sm:text-[2.75rem]">{aboutPage.title}</h1>
+        </header>
 
-      {aboutPage.paragraphs.map((paragraph) => (
-        <p key={paragraph} className="mt-5 max-w-[62ch] text-xl">
-          {paragraph}
+        {aboutPage.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="mt-6 text-xl">
+            {paragraph}
+          </p>
+        ))}
+
+        <section className="mt-16 border-t border-line pt-10">
+          <h2 className="text-2xl font-bold sm:text-[1.75rem]">Privacidade</h2>
+          <p className="mt-4">{aboutPage.privacy}</p>
+        </section>
+
+        <section className="mt-16 border-t border-line pt-10">
+          <h2 className="text-2xl font-bold sm:text-[1.75rem]">Créditos</h2>
+          <p className="mt-4">{aboutPage.credits}</p>
+          <p className="mt-4">{aboutPage.author}</p>
+        </section>
+
+        <p className="mt-10">
+          <Link className="link font-bold" href="/#temas">
+            Ver os temas
+          </Link>
         </p>
-      ))}
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold">Privacidade</h2>
-        <p className="mt-4 max-w-[62ch]">{aboutPage.privacy}</p>
-      </section>
-
-      <section className="mt-10">
-        <h2 className="text-2xl font-bold">Créditos</h2>
-        <p className="mt-4 max-w-[62ch]">{aboutPage.credits}</p>
-        <p className="mt-4 max-w-[62ch]">{aboutPage.author}</p>
-      </section>
-
-      <p className="mt-10">
-        <Link className="link font-bold" href="/#temas">
-          Ver os temas
-        </Link>
-      </p>
-
-      <footer className="mt-12 border-t border-line pt-6">
-        <p className="text-[1.0625rem] text-ink-soft">
-          Última atualização do conteúdo: {formatDate(aboutPage.reviewedAt)}.
-        </p>
-        <SourceList sources={uniqueSources} id="fontes-gerais" />
-      </footer>
+        <footer className="mt-16 border-t border-line pt-8">
+          <p className="text-[1.0625rem] text-ink-soft">
+            Última atualização do conteúdo: {formatDate(aboutPage.reviewedAt)}.
+          </p>
+          <SourceList sources={uniqueSources} id="fontes-gerais" />
+        </footer>
+      </div>
     </main>
   );
 }

@@ -17,26 +17,30 @@ export default function HomePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   return (
-    <main id="conteudo" className="mx-auto w-full max-w-3xl px-5 pb-4 sm:px-8">
-      <section className="pt-10 sm:pt-16">
-        <h1 className="reveal max-w-[12ch] text-[2.7rem] leading-[1.03] font-bold tracking-tight sm:text-[4.2rem]">
-          Pare.
-          <br />
-          Respire.
-          <br />
-          Confirme.
-        </h1>
-        <p className="mt-7 max-w-[52ch] text-xl">{homeText.support}</p>
-        <p className="mt-6 max-w-[52ch] border-l-4 border-safe pl-4 text-ink-soft">
-          {homeText.reassurance}
-        </p>
-        <div className="no-print mt-8 flex flex-wrap gap-3">
-          <Link href="#temas" className="button">
-            Ver os temas
-          </Link>
-          <Link href="#kit" className="button button-quiet">
-            Começar pelo kit
-          </Link>
+    <main id="conteudo" className="shell pb-6">
+      <section className="pt-10 sm:pt-16 lg:pt-20">
+        <div className="grid gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:items-end lg:gap-14">
+          <h1 className="reveal text-[2.9rem] leading-[1.02] font-bold tracking-tight sm:text-[4.4rem] lg:text-[5rem]">
+            Pare.
+            <br />
+            Respire.
+            <br />
+            Confirme.
+          </h1>
+          <div>
+            <p className="max-w-[46ch] text-xl">{homeText.support}</p>
+            <p className="mt-6 max-w-[46ch] border-l-4 border-safe pl-4 text-ink-soft">
+              {homeText.reassurance}
+            </p>
+            <div className="no-print mt-8 flex flex-wrap gap-3">
+              <Link href="#temas" className="button">
+                Ver os temas
+              </Link>
+              <Link href="#kit" className="button button-quiet">
+                Começar pelo kit
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -48,3 +52,4 @@ export default function HomePage() {
     </main>
   );
 }
+

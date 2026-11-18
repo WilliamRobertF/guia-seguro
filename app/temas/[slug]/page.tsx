@@ -35,10 +35,13 @@ export default async function TopicPage({ params }: TopicPageProps) {
   if (!topic) notFound();
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const index = topics.findIndex((item) => item.slug === slug);
+  const nextTopic = topics[index + 1];
 
   return (
     <TopicLayout
       topic={topic}
+      nextTopic={nextTopic}
       printUrl={siteUrl ? `${siteUrl}/temas/${topic.slug}/` : undefined}
     />
   );

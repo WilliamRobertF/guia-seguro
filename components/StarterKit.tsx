@@ -3,14 +3,14 @@ import { PrintButton } from "./PrintButton";
 
 export function StarterKit({ printUrl }: { printUrl?: string }) {
   return (
-    <section aria-labelledby="kit-titulo" id="kit" className="mt-16 scroll-mt-6">
+    <section aria-labelledby="kit-titulo" id="kit" className="mt-20 scroll-mt-6 sm:mt-24">
       <h2 id="kit-titulo" className="text-2xl font-bold sm:text-3xl">
         {kit.title}
       </h2>
-      <p className="mt-3 text-ink-soft">{kit.intro}</p>
-      <ul className="mt-6 divide-y divide-line border-y border-line">
+      <p className="mt-4 text-ink-soft">{kit.intro}</p>
+      <ul className="mt-8 divide-y divide-line border-y border-line">
         {kit.items.map((item) => (
-          <li key={item} className="flex gap-4 py-4">
+          <li key={item} className="flex gap-4 py-5">
             <svg
               width="24"
               height="24"
@@ -30,11 +30,11 @@ export function StarterKit({ printUrl }: { printUrl?: string }) {
                 strokeWidth="2"
               />
             </svg>
-            <span className="max-w-[62ch]">{item}</span>
+            <span className="max-w-[49ch]">{item}</span>
           </li>
         ))}
       </ul>
-      <div className="no-print mt-6">
+      <div className="no-print mt-8">
         <PrintButton label="Imprimir o kit" />
       </div>
       {printUrl ? (
