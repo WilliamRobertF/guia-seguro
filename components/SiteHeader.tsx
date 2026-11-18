@@ -40,7 +40,7 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
-          <ul className="flex items-center gap-x-6 font-brand text-[1.0625rem]">
+          <ul className="flex items-center gap-x-6 font-brand text-[0.95rem] uppercase tracking-[0.04em]">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -55,7 +55,7 @@ export function SiteHeader() {
         </nav>
 
         <details className="group lg:hidden">
-          <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-line px-3.5 font-brand font-semibold text-brand transition-colors hover:border-trust hover:text-trust">
+          <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-line px-3.5 font-brand text-[0.95rem] font-semibold uppercase tracking-[0.04em] text-brand transition-colors hover:border-trust hover:text-trust">
             <span>Menu</span>
             <svg
               width="16"
@@ -82,7 +82,7 @@ export function SiteHeader() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="flex min-h-12 items-center whitespace-nowrap font-brand font-normal text-brand no-underline hover:text-trust"
+                      className="flex min-h-12 items-center whitespace-nowrap font-brand text-[0.95rem] font-normal uppercase tracking-[0.04em] text-brand no-underline hover:text-trust"
                     >
                       {link.label}
                     </Link>

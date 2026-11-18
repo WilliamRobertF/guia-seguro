@@ -1,17 +1,19 @@
 import Link from "next/link";
+import { sectionLabels } from "@/content/sections";
 import { topics } from "@/content/topics";
+import { SectionLabel } from "./SectionLabel";
 import { TopicIcon } from "./TopicIcon";
 
 export function TopicList() {
   return (
     <section id="temas" aria-labelledby="temas-titulo" className="mt-20 scroll-mt-6 sm:mt-24">
-      <span aria-hidden="true" className="no-print mb-3 block h-1 w-9 rounded-full bg-trust" />
+      <SectionLabel>{sectionLabels.topics}</SectionLabel>
       <h2 id="temas-titulo" className="text-2xl font-bold sm:text-3xl">
         Temas
       </h2>
-      <ul className="mt-8 border-t border-line">
+      <ul className="mt-8 grid gap-x-12 lg:grid-cols-2">
         {topics.map((topic) => (
-          <li key={topic.slug} className="border-b border-line">
+          <li key={topic.slug} className="border-t border-line">
             <Link
               href={`/temas/${topic.slug}/`}
               className="group -mx-3 flex min-h-11 max-w-[49ch] items-start justify-between gap-4 rounded-xl px-3 py-6 no-underline transition-colors hover:bg-mist"

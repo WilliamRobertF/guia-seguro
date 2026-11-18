@@ -22,7 +22,7 @@ export default function HomePage() {
       <section className="shell pt-10 pb-4 sm:pt-16 lg:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:gap-14">
           <div>
-            <h1 className="reveal text-[2.9rem] leading-[1.02] font-bold tracking-tight sm:text-[4.4rem] lg:text-[5rem]">
+            <h1 className="reveal text-[2.9rem] leading-[1.02] font-bold tracking-tight sm:text-[4rem] lg:text-[4.5rem]">
               Pare.
               <br />
               Respire.
