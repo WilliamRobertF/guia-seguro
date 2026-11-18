@@ -59,14 +59,14 @@ export function TopicLayout({ topic, nextTopic, printUrl }: TopicLayoutProps) {
         <header className="mt-4">
           <h1 className="text-3xl font-bold sm:text-[2.75rem]">{topic.title}</h1>
           <p className="mt-5 text-xl text-ink-soft">{topic.summary}</p>
-          <p className="mt-7 rounded-r-lg border-l-4 border-safe bg-safe-soft px-5 py-5">
+          <p className="mt-7 rounded-r-2xl border-l-4 border-safe bg-safe-soft px-5 py-5">
             <span className="font-bold text-safe">Boa notícia: </span>
             {topic.goodNews}
           </p>
         </header>
 
         {topic.notice ? (
-          <aside className="mt-7 rounded-lg border border-attention-line bg-attention px-5 py-4 text-ink">
+          <aside className="mt-7 rounded-2xl border border-attention-line bg-attention px-5 py-4 text-ink">
             <p>{topic.notice}</p>
           </aside>
         ) : null}

@@ -36,7 +36,7 @@ export default function StudentsPage() {
           ))}
         </ul>
 
-        <aside className="mt-10 rounded-lg border border-attention-line bg-attention px-5 py-4 text-ink">
+        <aside className="mt-10 rounded-2xl border border-attention-line bg-attention px-5 py-4 text-ink">
           <p>{studentsPage.warning}</p>
         </aside>
 

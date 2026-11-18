@@ -4,7 +4,7 @@ export function FiqueDeOlho() {
   return (
     <aside
       aria-labelledby="fique-de-olho"
-      className="mt-20 rounded-lg border border-attention-line bg-attention px-6 py-7 text-ink sm:mt-24 sm:px-8 sm:py-9"
+      className="mt-20 rounded-2xl border border-attention-line bg-attention px-6 py-7 text-ink sm:mt-24 sm:px-8 sm:py-9"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-12">
         <div>

@@ -4,6 +4,7 @@ import { PrintButton } from "./PrintButton";
 export function StarterKit({ printUrl }: { printUrl?: string }) {
   return (
     <section aria-labelledby="kit-titulo" id="kit" className="mt-20 scroll-mt-6 sm:mt-24">
+      <span aria-hidden="true" className="no-print mb-3 block h-1 w-9 rounded-full bg-safe" />
       <h2 id="kit-titulo" className="text-2xl font-bold sm:text-3xl">
         {kit.title}
       </h2>

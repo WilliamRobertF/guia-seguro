@@ -52,7 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <details className="group lg:hidden">
-          <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-md px-2 font-bold text-ink transition-colors hover:bg-trust-soft">
+          <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-line px-3.5 font-bold text-ink transition-colors hover:border-trust hover:text-trust">
             <span>Menu</span>
             <svg
               width="16"
