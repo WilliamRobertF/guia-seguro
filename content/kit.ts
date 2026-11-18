@@ -1,5 +1,5 @@
 export const kit = {
-  title: "Seu kit para começar",
+  title: "Para começar",
   intro: "Faça uma vez e fique mais tranquilo.",
   items: [
     "Ative a confirmação em duas etapas no e-mail principal e no WhatsApp.",

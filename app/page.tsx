@@ -15,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
   return (
     <main id="conteudo">
       <section className="shell pt-10 pb-4 sm:pt-16 lg:pt-20">
@@ -39,7 +37,7 @@ export default function HomePage() {
                 Ver os temas
               </Link>
               <Link href="#kit" className="button button-quiet w-full sm:w-auto">
-                Começar pelo kit
+                Começar por aqui
               </Link>
             </div>
           </div>
@@ -51,7 +49,7 @@ export default function HomePage() {
 
       <div className="shell pb-6">
         <GoldenRules />
-        <StarterKit printUrl={siteUrl ? `${siteUrl}/` : undefined} />
+        <StarterKit />
         <TopicList />
         <FiqueDeOlho />
         <QrNote />

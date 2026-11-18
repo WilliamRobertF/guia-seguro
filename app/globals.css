@@ -243,10 +243,6 @@
   animation: rise 520ms ease-out both;
 }
 
-.print-only {
-  display: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -292,10 +288,6 @@
 
   .no-print {
     display: none !important;
-  }
-
-  .print-only {
-    display: block !important;
   }
 
   .reveal {

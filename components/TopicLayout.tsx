@@ -29,10 +29,9 @@ function CheckIcon() {
 type TopicLayoutProps = {
   topic: Topic;
   nextTopic?: Topic;
-  printUrl?: string;
 };
 
-export function TopicLayout({ topic, nextTopic, printUrl }: TopicLayoutProps) {
+export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
   const contents = [
     { id: "como-funciona", label: "Como funciona" },
     { id: "o-que-voce-pode-ver", label: "O que você pode ver por aí" },
@@ -178,8 +177,6 @@ export function TopicLayout({ topic, nextTopic, printUrl }: TopicLayoutProps) {
               {nextTopic ? nextTopic.title : "Conversar e ensinar"}
             </Link>
           </nav>
-
-          {printUrl ? <p className="print-only mt-6 break-all text-sm">{printUrl}</p> : null}
         </footer>
       </div>
     </main>

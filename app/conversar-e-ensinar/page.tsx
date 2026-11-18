@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default function TeachPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
   return (
     <main id="conteudo" className="shell pb-16">
       <div className="max-w-[49ch]">
@@ -48,11 +46,6 @@ export default function TeachPage() {
           <div className="no-print mt-8">
             <ShareButton />
           </div>
-          {siteUrl ? (
-            <p className="print-only mt-6 break-all text-sm">
-              {siteUrl}/conversar-e-ensinar/
-            </p>
-          ) : null}
         </footer>
       </div>
     </main>
