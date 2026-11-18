@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  color-scheme: light;
+  --ink: #1b2430;
+  --ink-soft: #3d4a5a;
+  --paper: #f7f9fb;
+  --panel: #ffffff;
+  --line: #cfd8e3;
+  --trust: #0f5a8c;
+  --trust-soft: #e3eef6;
+  --on-trust: #ffffff;
+  --safe: #1b7a4b;
+  --safe-soft: #e4f2ea;
+  --attention: #fff1cc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: dark;
+    --ink: #e9eef4;
+    --ink-soft: #b6c2d0;
+    --paper: #10161d;
+    --panel: #161e27;
+    --line: #2b3644;
+    --trust: #8cc7ee;
+    --trust-soft: #18293a;
+    --on-trust: #0b1016;
+    --safe: #7fd3a6;
+    --safe-soft: #14291f;
+    --attention: #332b12;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-trust: var(--trust);
+  --color-trust-soft: var(--trust-soft);
+  --color-on-trust: var(--on-trust);
+  --color-safe: var(--safe);
+  --color-safe-soft: var(--safe-soft);
+  --color-attention: var(--attention);
+  --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--trust);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--trust-soft);
+  }
+}
+
+@layer components {
+  .link {
+    color: var(--trust);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .link:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    background-color: var(--trust);
+    color: var(--on-trust);
+    padding: 0.6rem 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    filter: brightness(1.1);
+  }
+
+  .button-quiet {
+    border: 2px solid var(--line);
+    background-color: transparent;
+    color: var(--ink);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -4rem;
+    z-index: 50;
+    border-radius: 6px;
+    background-color: var(--panel);
+    color: var(--ink);
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: top 120ms ease-out;
+  }
+
+  .skip-link:focus {
+    top: 0.5rem;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  animation: rise 520ms ease-out both;
+}
+
+.print-only {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    animation: none;
+  }
+}
+
+@media print {
+  :root {
+    --ink: #000000;
+    --ink-soft: #1a1a1a;
+    --paper: #ffffff;
+    --panel: #ffffff;
+    --line: #8a8a8a;
+    --trust: #0f5a8c;
+    --safe: #145c39;
+    --attention: #ffffff;
+  }
+
+  @page {
+    margin: 18mm;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 11pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  li,
+  p {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000000;
+  }
 }

@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# qr code gerado para o folder
+/qr
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
