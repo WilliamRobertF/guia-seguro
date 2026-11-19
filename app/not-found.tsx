@@ -10,10 +10,10 @@ export default function NotFound() {
           susto: você pode voltar ao início ou ir direto para a lista de temas.
         </p>
         <div className="no-print mt-10 flex flex-wrap gap-3">
-          <Link href="/" className="button">
+          <Link href="/" className="button w-full sm:w-auto">
             Ir para o início
           </Link>
-          <Link href="/#temas" className="button button-quiet">
+          <Link href="/#temas" className="button button-quiet w-full sm:w-auto">
             Ver os temas
           </Link>
         </div>

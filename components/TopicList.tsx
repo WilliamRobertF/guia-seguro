@@ -11,19 +11,19 @@ export function TopicList() {
       <h2 id="temas-titulo" className="text-2xl font-bold sm:text-3xl">
         Temas
       </h2>
-      <ul className="mt-8 grid gap-x-12 lg:grid-cols-2">
+      <ul className="mt-8 grid gap-x-12 border-b border-line lg:grid-cols-2">
         {topics.map((topic) => (
-          <li key={topic.slug} className="border-t border-line">
+          <li key={topic.slug}>
             <Link
               href={`/temas/${topic.slug}/`}
-              className="group -mx-3 flex min-h-11 max-w-[49ch] items-start justify-between gap-4 rounded-xl px-3 py-6 no-underline transition-colors hover:bg-surface-2"
+              className="topic-row group flex min-h-11 w-full items-start justify-between gap-4 border-t border-line px-3 py-6 no-underline transition-colors duration-150 hover:bg-surface-2 active:bg-surface-2"
             >
               <TopicIcon slug={topic.slug} />
-              <span className="flex flex-1 flex-col gap-1">
-                <span className="font-brand text-xl font-bold text-ink group-hover:text-link group-hover:underline">
+              <span className="flex min-w-0 flex-1 flex-col gap-1">
+                <span className="font-brand text-xl font-bold text-ink group-hover:text-link group-active:text-link">
                   {topic.title}
                 </span>
-                <span className="text-ink-soft">{topic.summary}</span>
+                <span className="max-w-[49ch] text-ink-soft">{topic.summary}</span>
               </span>
               <svg
                 width="20"
@@ -31,7 +31,7 @@ export function TopicList() {
                 viewBox="0 0 20 20"
                 aria-hidden="true"
                 focusable="false"
-                className="no-print mt-2 shrink-0 text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-link"
+                className="topic-arrow no-print mt-2 shrink-0 text-ink-soft group-hover:text-link"
               >
                 <path
                   d="M4 10h12M11 5l5 5-5 5"

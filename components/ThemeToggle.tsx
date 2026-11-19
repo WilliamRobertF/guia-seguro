@@ -50,7 +50,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className="no-print inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand transition-colors hover:border-accent hover:text-accent"
+      className="no-print inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand transition-colors duration-150 hover:border-accent hover:text-accent active:border-accent active:text-accent"
     >
       <svg
         width="20"

@@ -24,7 +24,7 @@ export function ShareButton() {
 
   return (
     <div>
-      <button type="button" onClick={sharePage} className="button button-quiet">
+      <button type="button" onClick={sharePage} className="button button-quiet w-full sm:w-auto">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path
             d="M12 3v12M8 7l4-4 4 4M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"

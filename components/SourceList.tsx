@@ -15,9 +15,9 @@ export function SourceList({ sources, id = "fontes", title = "Fontes" }: SourceL
       <p className="mt-2 text-ink-soft">Cada link abaixo abre outro site.</p>
       <ul className="mt-4 space-y-5">
         {sources.map((source) => (
-          <li key={source.url}>
+          <li key={source.url} className="min-w-0 [overflow-wrap:anywhere]">
             <a
-              className="link font-bold"
+              className="link font-bold [overflow-wrap:anywhere]"
               href={source.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -25,7 +25,9 @@ export function SourceList({ sources, id = "fontes", title = "Fontes" }: SourceL
               {source.label}
             </a>
             <span className="mt-1 block text-[1rem] text-ink-soft">abre outro site</span>
-            <span className="block break-all text-[1rem] text-ink-soft">{source.url}</span>
+            <span className="block text-[1rem] text-ink-soft [overflow-wrap:anywhere]">
+              {source.url}
+            </span>
           </li>
         ))}
       </ul>

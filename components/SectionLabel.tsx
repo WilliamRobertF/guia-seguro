@@ -7,8 +7,8 @@ export function SectionLabel({
 }) {
   return (
     <p
-      className={`mb-2 font-brand text-base font-normal uppercase tracking-[0.12em] ${
-        onBrand ? "text-accent" : "text-link"
+      className={`mb-2 font-sans text-base font-normal tracking-normal ${
+        onBrand ? "text-on-brand-soft" : "text-muted"
       }`}
     >
       {children}

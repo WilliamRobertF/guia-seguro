@@ -33,7 +33,7 @@ export default function TeachPage() {
         ))}
 
         <p className="mt-10">
-          <Link className="link font-bold" href="/#temas">
+          <Link className="nav-link font-bold" href="/#temas">
             Ver os temas
           </Link>
         </p>

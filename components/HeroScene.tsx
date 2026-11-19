@@ -1,135 +1,64 @@
-import {
-  BookIcon,
-  ChatIcon,
-  CheckIcon,
-  FolderIcon,
-  HeartIcon,
-  PencilIcon,
-  PlayIcon,
-  SearchIcon,
-  WifiIcon,
-} from "./icons";
+import Link from "next/link";
+import { topics } from "@/content/topics";
+import { CheckIcon } from "./icons";
+import { topicIconItems } from "./TopicIcon";
 
-const tiles = [
-  {
-    Icon: ChatIcon,
-    position: "left-[1%] top-[16%] -rotate-6",
-    tint: "bg-tint-lavender text-link",
-    size: 26,
-  },
-  {
-    Icon: WifiIcon,
-    position: "left-[42%] top-[1%] rotate-3",
-    tint: "bg-tint-mint text-safe",
-    size: 24,
-  },
-  {
-    Icon: BookIcon,
-    position: "right-[1%] top-[15%] rotate-6",
-    tint: "bg-tint-blue text-link",
-    size: 26,
-  },
-  {
-    Icon: HeartIcon,
-    position: "left-[8%] top-[49%] rotate-4",
-    tint: "bg-tint-pink text-link",
-    size: 24,
-  },
-  {
-    Icon: SearchIcon,
-    position: "right-[5%] top-[47%] -rotate-5",
-    tint: "bg-tint-peach text-link",
-    size: 26,
-  },
-  {
-    Icon: PlayIcon,
-    position: "bottom-[7%] left-[15%] rotate-5",
-    tint: "bg-tint-yellow text-attention-ink",
-    size: 24,
-  },
-  {
-    Icon: FolderIcon,
-    position: "bottom-[9%] right-[9%] -rotate-4",
-    tint: "bg-tint-lavender text-link",
-    size: 26,
-  },
-  {
-    Icon: PencilIcon,
-    position: "bottom-0 left-[44%] rotate-2",
-    tint: "bg-tint-blue text-link",
-    size: 24,
-  },
-];
-
-function Tile({
-  Icon,
-  tint,
-  size,
-  className = "",
-}: {
-  Icon: typeof ChatIcon;
-  tint: string;
-  size: number;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`flex size-16 items-center justify-center rounded-2xl border border-line shadow-sm ${tint} ${className}`}
-    >
-      <Icon size={size} />
-    </span>
-  );
-}
+const ORBIT_RADIUS = 43;
 
 export function HeroScene() {
   return (
     <div
-      aria-hidden="true"
-      className="no-print relative mx-auto aspect-square w-full max-w-[27rem] select-none"
+      role="group"
+      aria-label="Atalhos ilustrados para os temas"
+      className="no-print relative mx-auto aspect-square w-full max-w-[20rem] select-none sm:max-w-[27rem]"
     >
-      <span className="absolute inset-[7%] rounded-full bg-hero" />
-      <span className="absolute left-[36%] top-[7%] size-3 rounded-full bg-accent" />
-      <span className="absolute bottom-[20%] left-[35%] size-2.5 rounded-full bg-link/50" />
-
-      {tiles.map(({ Icon, position, tint, size }) => (
-        <div key={position} className={`absolute ${position}`}>
-          <Tile Icon={Icon} tint={tint} size={size} />
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 z-10 flex w-[52%] -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+      >
+        <div className="w-full rounded-3xl border border-line bg-surface px-3 py-3 text-center shadow-soft sm:px-5 sm:py-4">
+          <p className="text-[0.8rem] leading-snug font-bold text-ink sm:text-[0.95rem]">
+            Seu pacote foi retido. Pague a taxa agora para liberar a entrega.
+          </p>
+          <p className="mt-2 text-[0.65rem] text-muted sm:text-xs">
+            Exemplo de mensagem de golpe
+          </p>
         </div>
-      ))}
-
-      <div className="absolute left-1/2 top-1/2 w-[56%] -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-line bg-surface p-6 shadow-soft">
-        <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-accent text-on-accent">
-          <CheckIcon size={32} />
+        <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+          <span className="rounded-full bg-surface-2 px-2.5 py-1 text-[0.65rem] font-bold text-ink sm:px-3 sm:text-xs">
+            Pare
+          </span>
+          <span className="rounded-full bg-surface-2 px-2.5 py-1 text-[0.65rem] font-bold text-ink sm:px-3 sm:text-xs">
+            Respire
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-accent px-2.5 py-1 text-[0.65rem] font-bold text-on-accent sm:px-3 sm:text-xs">
+            Confirme
+            <CheckIcon size={12} />
+          </span>
         </div>
-        <div className="mt-5 flex justify-center gap-2">
-          <span className="size-2 rounded-full bg-tint-lavender" />
-          <span className="size-2 rounded-full bg-tint-yellow" />
-          <span className="size-2 rounded-full bg-tint-mint" />
-        </div>
-        <span className="absolute -bottom-3 left-1/2 size-7 -translate-x-1/2 rotate-45 border-b border-r border-line bg-surface" />
       </div>
-    </div>
-  );
-}
 
-const rowTiles = [
-  { Icon: ChatIcon, tint: "bg-tint-lavender text-link" },
-  { Icon: WifiIcon, tint: "bg-tint-mint text-safe" },
-  { Icon: BookIcon, tint: "bg-tint-blue text-link" },
-  { Icon: HeartIcon, tint: "bg-tint-pink text-link" },
-];
+      {topics.map((topic, index) => {
+        const item = topicIconItems[topic.slug as keyof typeof topicIconItems];
+        if (!item) return null;
 
-export function HeroIconRow() {
-  return (
-    <div aria-hidden="true" className="no-print mt-6 flex gap-2 lg:hidden">
-      {rowTiles.map(({ Icon, tint }) => (
-        <span
-          key={tint}
-          className={`flex size-12 items-center justify-center rounded-2xl border border-line ${tint}`}
-        >
-          <Icon size={22} />
-        </span>
-      ))}
+        const angle = ((-90 + (360 / topics.length) * index) * Math.PI) / 180;
+        const left = 50 + ORBIT_RADIUS * Math.cos(angle);
+        const top = 50 + ORBIT_RADIUS * Math.sin(angle);
+        const Icon = item.Icon;
+
+        return (
+          <Link
+            key={topic.slug}
+            href={`/temas/${topic.slug}/`}
+            aria-label={`Ver o tema ${topic.title}`}
+            className={`absolute flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-line no-underline transition-colors duration-150 hover:border-link active:border-link sm:size-14 ${item.tint}`}
+            style={{ left: `${left}%`, top: `${top}%` }}
+          >
+            <Icon size={22} />
+          </Link>
+        );
+      })}
     </div>
   );
 }

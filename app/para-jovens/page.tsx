@@ -41,10 +41,10 @@ export default function StudentsPage() {
         </aside>
 
         <p className="mt-10 flex flex-wrap gap-x-6 gap-y-2">
-          <Link className="link font-bold" href="/conversar-e-ensinar/">
+          <Link className="nav-link font-bold" href="/conversar-e-ensinar/">
             Como conversar em casa e na escola
           </Link>
-          <Link className="link font-bold" href="/#temas">
+          <Link className="nav-link font-bold" href="/#temas">
             Ver os temas
           </Link>
         </p>

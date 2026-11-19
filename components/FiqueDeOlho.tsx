@@ -1,7 +1,5 @@
 import { fiqueDeOlho } from "@/content/fique-de-olho";
-import { sectionLabels } from "@/content/sections";
 import { EyeIcon } from "./icons";
-import { SectionLabel } from "./SectionLabel";
 
 export function FiqueDeOlho() {
   return (
@@ -11,7 +9,6 @@ export function FiqueDeOlho() {
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-12">
         <div>
-          <SectionLabel>{sectionLabels.watch}</SectionLabel>
           <h2
             id="fique-de-olho"
             className="flex items-center gap-3 text-2xl font-bold text-attention-ink"
@@ -21,7 +18,7 @@ export function FiqueDeOlho() {
             </span>
             Fique de olho
           </h2>
-          <p className="mt-4 text-[1.0625rem] text-ink-soft">
+          <p className="mt-4 text-[1.0625rem] text-attention-ink/80">
             Atualizado em {fiqueDeOlho.updatedAt}
           </p>
         </div>

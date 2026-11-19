@@ -151,10 +151,6 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     background-color: var(--bg);
     color: var(--ink);
@@ -191,6 +187,14 @@
     outline-offset: 3px;
   }
 
+  a,
+  button,
+  summary {
+    transition-property: color, background-color, border-color, outline-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+  }
+
   ::selection {
     background: var(--surface-2);
   }
@@ -206,6 +210,20 @@
 
   .link:hover {
     text-decoration-thickness: 2px;
+  }
+
+  .link:active {
+    color: var(--ink);
+  }
+
+  .nav-link {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .nav-link:hover,
+  .nav-link:active {
+    color: var(--ink);
   }
 
   .shell {
@@ -224,6 +242,7 @@
   .button {
     display: inline-flex;
     min-height: 48px;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -238,11 +257,24 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     text-decoration: none;
-    transition: filter 140ms ease, background-color 140ms ease;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+
+  @media (min-width: 640px) {
+    .button {
+      width: auto;
+    }
   }
 
   .button:hover {
-    filter: brightness(1.04);
+    background-color: color-mix(in srgb, var(--accent) 88%, var(--on-accent));
+  }
+
+  .button:active {
+    background-color: color-mix(in srgb, var(--accent) 80%, var(--on-accent));
   }
 
   .button-quiet {
@@ -253,7 +285,12 @@
 
   .button-quiet:hover {
     background-color: var(--surface-2);
-    filter: none;
+  }
+
+  .button-quiet:active {
+    border-color: var(--ink);
+    background-color: var(--surface-2);
+    color: var(--ink);
   }
 
   .shadow-soft {
@@ -263,6 +300,19 @@
   .bg-brand :focus-visible,
   .bg-footer :focus-visible {
     outline-color: var(--accent);
+  }
+
+  .topic-row:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+  }
+
+  .topic-arrow {
+    transition: translate 150ms ease;
+  }
+
+  .topic-row:hover .topic-arrow {
+    translate: 2px 0;
   }
 
   .skip-link {
@@ -275,28 +325,17 @@
     color: var(--ink);
     padding: 0.75rem 1rem;
     font-weight: 700;
-    text-decoration: underline;
-    transition: top 120ms ease-out;
+    text-decoration: none;
+    transition: none;
+  }
+
+  .skip-link:active {
+    background-color: var(--surface-2);
   }
 
   .skip-link:focus {
     top: 0.5rem;
   }
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.reveal {
-  animation: rise 520ms ease-out both;
 }
 
 .theme-icon-sun {
@@ -331,8 +370,12 @@
     scroll-behavior: auto !important;
   }
 
-  .reveal {
-    animation: none;
+  .topic-arrow {
+    transition: none;
+  }
+
+  .topic-row:hover .topic-arrow {
+    translate: none;
   }
 }
 
@@ -382,12 +425,6 @@
 
   .no-print {
     display: none !important;
-  }
-
-  .reveal {
-    animation: none;
-    opacity: 1;
-    transform: none;
   }
 
   .shadow-soft {

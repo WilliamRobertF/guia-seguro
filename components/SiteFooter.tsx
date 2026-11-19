@@ -42,7 +42,10 @@ export function SiteFooter() {
               escuro, a escolha fica guardada só no seu navegador.
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <Link className="underline underline-offset-4 hover:no-underline" href="/sobre/">
+              <Link
+                className="font-bold text-footer-ink no-underline transition-colors duration-150 hover:text-accent active:text-on-brand"
+                href="/sobre/"
+              >
                 Sobre o projeto e fontes
               </Link>
               <span className="text-footer-soft">{year} Guia Seguro</span>

@@ -42,12 +42,12 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <nav aria-label="Navegação principal" className="hidden lg:block">
-            <ul className="flex items-center gap-x-6 font-brand text-[0.95rem] uppercase tracking-[0.04em]">
+            <ul className="flex items-center gap-x-6 font-sans text-base">
               {links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex min-h-11 items-center whitespace-nowrap font-normal text-on-brand no-underline hover:text-accent hover:underline"
+                    className="inline-flex min-h-11 items-center whitespace-nowrap font-normal text-on-brand-soft no-underline transition-colors duration-150 hover:text-accent active:text-on-brand"
                   >
                     {link.label}
                   </Link>
@@ -59,7 +59,7 @@ export function SiteHeader() {
           <ThemeToggle />
 
           <details className="group lg:hidden">
-            <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-on-brand/40 px-3.5 font-brand text-[0.95rem] font-semibold uppercase tracking-[0.04em] text-on-brand transition-colors hover:border-accent hover:text-accent">
+            <summary className="flex min-h-11 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-on-brand/40 px-3.5 font-sans text-base font-normal text-on-brand-soft transition-colors duration-150 hover:border-accent hover:text-accent active:border-accent active:text-on-brand">
               <span>Menu</span>
               <svg
                 width="16"
@@ -67,7 +67,6 @@ export function SiteHeader() {
                 viewBox="0 0 16 16"
                 aria-hidden="true"
                 focusable="false"
-                className="transition-transform group-open:rotate-180"
               >
                 <path
                   d="M3.5 6l4.5 4.5L12.5 6"
@@ -86,7 +85,7 @@ export function SiteHeader() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="flex min-h-12 items-center whitespace-nowrap font-brand text-[0.95rem] font-normal uppercase tracking-[0.04em] text-ink no-underline hover:text-link"
+                        className="flex min-h-12 items-center whitespace-nowrap font-sans text-base font-normal text-muted no-underline transition-colors duration-150 hover:text-ink active:text-ink"
                       >
                         {link.label}
                       </Link>

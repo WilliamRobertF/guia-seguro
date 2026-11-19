@@ -8,7 +8,7 @@ import {
   WifiIcon,
 } from "./icons";
 
-const items = {
+export const topicIconItems = {
   "whatsapp-e-codigos": { Icon: ChatIcon, tint: "bg-tint-lavender text-link" },
   "dinheiro-a-receber": { Icon: BanknoteIcon, tint: "bg-tint-yellow text-attention-ink" },
   "links-qr-e-ligacoes": { Icon: QrIcon, tint: "bg-tint-blue text-link" },
@@ -19,7 +19,7 @@ const items = {
 } as const;
 
 export function TopicIcon({ slug }: { slug: string }) {
-  const item = items[slug as keyof typeof items];
+  const item = topicIconItems[slug as keyof typeof topicIconItems];
   if (!item) return null;
 
   const { Icon, tint } = item;

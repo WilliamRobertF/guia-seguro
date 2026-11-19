@@ -24,12 +24,12 @@ export default function WrongPage() {
 
         <Steps steps={wrongPage.steps} />
 
-        <p className="mt-12 border-l-4 border-safe pl-4 font-bold">
+        <p className="mt-12 rounded-2xl bg-surface-2 px-5 py-4 font-bold">
           {wrongPage.closing}
         </p>
 
         <p className="mt-10">
-          <Link className="link font-bold" href="/#temas">
+          <Link className="nav-link font-bold" href="/#temas">
             Voltar para os temas
           </Link>
         </p>

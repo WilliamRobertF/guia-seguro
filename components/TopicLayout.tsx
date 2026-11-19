@@ -4,7 +4,7 @@ import { formatDate } from "@/lib/date";
 import { ShareButton } from "./ShareButton";
 import { SourceList } from "./SourceList";
 
-function CheckIcon() {
+function CheckIcon({ className = "mt-1" }: { className?: string }) {
   return (
     <svg
       width="22"
@@ -12,7 +12,7 @@ function CheckIcon() {
       viewBox="0 0 24 24"
       aria-hidden="true"
       focusable="false"
-      className="mt-1 shrink-0"
+      className={`shrink-0 ${className}`}
     >
       <path
         d="M4 12.5l5 5L20 6.5"
@@ -46,7 +46,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
     <main id="conteudo" className="shell pb-16">
       <div className="max-w-[49ch]">
         <nav aria-label="Você está aqui" className="no-print mt-8 text-[1.0625rem]">
-          <Link href="/#temas" className="link">
+          <Link href="/#temas" className="nav-link">
             Temas
           </Link>
           <span className="mx-2 text-ink-soft" aria-hidden="true">
@@ -56,12 +56,19 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         </nav>
 
         <header className="mt-4">
-          <h1 className="text-3xl font-bold sm:text-[2.75rem]">{topic.title}</h1>
+          <h1 className="text-[2.25rem] leading-[1.05] font-bold sm:text-[3.25rem]">
+            {topic.title}
+          </h1>
           <p className="mt-5 text-xl text-ink-soft">{topic.summary}</p>
-          <p className="mt-7 rounded-r-2xl border-l-4 border-safe bg-safe-soft px-5 py-5">
-            <span className="font-brand font-bold text-safe">Boa notícia: </span>
-            {topic.goodNews}
-          </p>
+          <div className="mt-7 flex gap-4 rounded-2xl bg-surface-2 px-5 py-5">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-surface text-safe">
+              <CheckIcon className="" />
+            </span>
+            <p>
+              <span className="font-brand font-bold text-safe">Boa notícia: </span>
+              {topic.goodNews}
+            </p>
+          </div>
         </header>
 
         {topic.notice ? (
@@ -72,7 +79,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
 
         <nav
           aria-labelledby="nesta-pagina"
-          className="no-print mt-10 border-t border-line pt-6"
+          className="no-print mt-12 border-t border-line pt-6"
         >
           <h2 id="nesta-pagina" className="text-[1.0625rem] font-bold">
             Nesta página
@@ -80,7 +87,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {contents.map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="link text-[1.0625rem]">
+                <a href={`#${item.id}`} className="nav-link text-[1.0625rem]">
                   {item.label}
                 </a>
               </li>
@@ -137,20 +144,22 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         </section>
 
         {topic.ifSomethingWentWrong ? (
-          <section aria-labelledby="deu-errado" className="mt-16 border-t border-line pt-10">
-            <h2 id="deu-errado" className="text-2xl font-bold sm:text-[1.75rem]">
-              Se algo deu errado
-            </h2>
-            <ul className="mt-5 space-y-3">
-              {topic.ifSomethingWentWrong.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <p className="mt-5">
-              <Link className="link font-bold" href="/se-algo-deu-errado/">
-                Ver o passo a passo completo
-              </Link>
-            </p>
+          <section aria-labelledby="deu-errado" className="mt-16">
+            <div className="rounded-2xl border border-line bg-surface px-5 py-6">
+              <h2 id="deu-errado" className="text-2xl font-bold sm:text-[1.75rem]">
+                Se algo deu errado
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {topic.ifSomethingWentWrong.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <p className="mt-5">
+                <Link className="nav-link font-bold" href="/se-algo-deu-errado/">
+                  Ver o passo a passo completo
+                </Link>
+              </p>
+            </div>
           </section>
         ) : null}
 
@@ -172,7 +181,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
             </p>
             <Link
               href={nextTopic ? `/temas/${nextTopic.slug}/` : "/conversar-e-ensinar/"}
-              className="link mt-1 inline-block text-xl font-bold"
+              className="nav-link mt-1 inline-block text-xl font-bold"
             >
               {nextTopic ? nextTopic.title : "Conversar e ensinar"}
             </Link>
