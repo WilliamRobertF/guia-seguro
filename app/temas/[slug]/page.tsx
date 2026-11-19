@@ -35,7 +35,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
   if (!topic) notFound();
 
   const index = topics.findIndex((item) => item.slug === slug);
-  const nextTopic = topics[index + 1];
+  const nextTopic = topics[(index + 1) % topics.length];
 
   return (
     <TopicLayout topic={topic} nextTopic={nextTopic} />
