@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
@@ -28,11 +28,24 @@ function applyTheme(theme: Theme) {
 
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const animationTimer = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (animationTimer.current) window.clearTimeout(animationTimer.current);
+      document.documentElement.classList.remove("theme-anim");
+    };
+  }, []);
 
   function toggleTheme() {
     const current: Theme =
       document.documentElement.dataset.theme === "dark" ? "dark" : "light";
     const next: Theme = current === "dark" ? "light" : "dark";
+    const root = document.documentElement;
+
+    root.classList.add("theme-anim");
+    if (animationTimer.current) window.clearTimeout(animationTimer.current);
+
     applyTheme(next);
 
     try {
@@ -40,6 +53,11 @@ export function ThemeToggle() {
     } catch {
       // Sem armazenamento disponível, o tema ainda troca nesta visita.
     }
+
+    animationTimer.current = window.setTimeout(() => {
+      root.classList.remove("theme-anim");
+      animationTimer.current = null;
+    }, 350);
   }
 
   const label = theme === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro";
@@ -50,7 +68,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className="no-print inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand transition-colors duration-150 hover:border-accent hover:text-accent active:border-accent active:text-accent"
+      className="no-print relative inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand hover:border-accent hover:text-accent active:border-accent active:text-accent"
     >
       <svg
         width="20"

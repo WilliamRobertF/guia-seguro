@@ -200,7 +200,7 @@ export function HeroIllustration() {
           type="button"
           aria-pressed={paused}
           onClick={togglePaused}
-          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface px-4 text-base font-bold text-ink transition-colors duration-150 hover:border-link hover:text-link active:border-link active:text-link"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface px-4 text-base font-bold text-ink hover:border-link hover:text-link active:border-link active:text-link"
         >
           <PauseIcon paused={paused} />
           {paused ? "Retomar animação" : "Pausar animação"}

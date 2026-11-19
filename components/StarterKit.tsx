@@ -5,7 +5,7 @@ import { SectionLabel } from "./SectionLabel";
 
 export function StarterKit() {
   return (
-    <section aria-labelledby="kit-titulo" id="kit" className="mt-20 scroll-mt-6 sm:mt-24">
+    <section aria-labelledby="kit-titulo" id="kit" className="mt-20 scroll-mt-6 sm:mt-24" tabIndex={-1}>
       <div className="rounded-3xl bg-brand px-6 py-8 text-on-brand sm:px-8 sm:py-10">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-14">
           <div>

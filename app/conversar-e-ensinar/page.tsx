@@ -37,6 +37,7 @@ export default function TeachPage() {
             id={sectionId}
             aria-labelledby={`${sectionId}-titulo`}
             className="mt-16 scroll-mt-6 border-t border-line pt-10 first:mt-0 first:border-t-0 first:pt-0"
+            tabIndex={-1}
           >
             <h2
               id={`${sectionId}-titulo`}

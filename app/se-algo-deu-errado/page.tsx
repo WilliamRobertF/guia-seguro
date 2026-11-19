@@ -26,7 +26,7 @@ export default function WrongPage() {
       subtitle={wrongPage.intro}
       indexItems={indexItems}
     >
-      <section id="passo-a-passo" aria-label="Passo a passo" className="scroll-mt-6">
+      <section id="passo-a-passo" aria-label="Passo a passo" className="scroll-mt-6" tabIndex={-1}>
         <Steps steps={wrongPage.steps} />
       </section>
 

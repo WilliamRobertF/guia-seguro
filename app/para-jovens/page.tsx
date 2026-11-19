@@ -16,7 +16,7 @@ const indexItems = [{ id: "lembretes", label: "Lembretes" }];
 export default function StudentsPage() {
   return (
     <InternalPageLayout title={studentsPage.title} indexItems={indexItems}>
-      <section id="lembretes" aria-label="Lembretes" className="scroll-mt-6">
+      <section id="lembretes" aria-label="Lembretes" className="scroll-mt-6" tabIndex={-1}>
         <ul className="mt-10 divide-y divide-line border-y border-line">
           {studentsPage.lines.map((line) => (
             <li key={line} className="flex gap-4 py-6">

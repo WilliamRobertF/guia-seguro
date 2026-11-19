@@ -2,6 +2,12 @@
 
 :root {
   color-scheme: light;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 150ms;
+  --t-theme: 300ms;
+  --t-page: 250ms;
+  --header-height: 4.25rem;
+  --scroll-offset: 5.25rem;
   --bg: #f7f4fc;
   --surface: #ffffff;
   --surface-2: #eee8f8;
@@ -252,6 +258,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-offset);
+  }
+
   body {
     background-color: var(--bg);
     color: var(--ink);
@@ -293,13 +304,105 @@
   a,
   button,
   summary {
-    transition-property: color, background-color, border-color, outline-color;
-    transition-duration: 150ms;
-    transition-timing-function: ease;
+    -webkit-tap-highlight-color: transparent;
+    transition-property: color, background-color, border-color, transform, outline-color;
+    transition-duration: var(--t-fast);
+    transition-timing-function: var(--ease);
+  }
+
+  button {
+    transition-timing-function: var(--ease);
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  section[id] {
+    scroll-margin-top: var(--scroll-offset);
+  }
+
+  section[id]:target {
+    animation: target-highlight 1.4s var(--ease);
   }
 
   ::selection {
-    background: var(--surface-2);
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+}
+
+html.theme-anim,
+html.theme-anim body,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition:
+    background-color var(--t-theme) var(--ease),
+    color var(--t-theme) var(--ease),
+    border-color var(--t-theme) var(--ease),
+    fill var(--t-theme) var(--ease),
+    stroke var(--t-theme) var(--ease);
+}
+
+.page-enter {
+  animation: page-enter var(--t-page) var(--ease);
+}
+
+.menu-panel {
+  animation: none;
+}
+
+details[open] .menu-panel {
+  animation: menu-in var(--t-fast) var(--ease);
+}
+
+.link-status {
+  display: none;
+}
+
+.is-pending {
+  animation: link-pulse 1s var(--ease) infinite;
+}
+
+@keyframes target-highlight {
+  from {
+    background-color: var(--surface-2);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes link-pulse {
+  50% {
+    opacity: 0.55;
   }
 }
 
@@ -374,9 +477,10 @@
     text-transform: none;
     text-decoration: none;
     transition:
-      background-color 150ms ease,
-      border-color 150ms ease,
-      color 150ms ease;
+      background-color var(--t-fast) var(--ease),
+      border-color var(--t-fast) var(--ease),
+      color var(--t-fast) var(--ease),
+      transform var(--t-fast) var(--ease);
   }
 
   @media (min-width: 640px) {
@@ -387,10 +491,12 @@
 
   .button:hover {
     background-color: color-mix(in srgb, var(--accent) 88%, var(--on-accent));
+    transform: translateY(-1px);
   }
 
   .button:active {
     background-color: color-mix(in srgb, var(--accent) 80%, var(--on-accent));
+    transform: scale(0.98);
   }
 
   .button-quiet {
@@ -573,25 +679,45 @@
   }
 }
 
+.theme-icon-sun,
+.theme-icon-moon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transition:
+    opacity 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 .theme-icon-sun {
-  display: none;
+  opacity: 0;
+  transform: rotate(-20deg);
 }
 
 [data-theme="dark"] .theme-icon-sun {
-  display: block;
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 [data-theme="dark"] .theme-icon-moon {
-  display: none;
+  opacity: 0;
+  transform: rotate(20deg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .theme-icon-sun {
-    display: block;
+    opacity: 1;
+    transform: rotate(0deg);
   }
 
   :root:not([data-theme]) .theme-icon-moon {
-    display: none;
+    opacity: 0;
+    transform: rotate(20deg);
   }
 }
 
@@ -603,6 +729,37 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.theme-anim,
+  html.theme-anim body,
+  html.theme-anim *,
+  html.theme-anim *::before,
+  html.theme-anim *::after {
+    transition: none !important;
+  }
+
+  .page-enter,
+  details[open] .menu-panel,
+  .is-pending,
+  section[id]:target {
+    animation: none !important;
+  }
+
+  .theme-icon-sun,
+  .theme-icon-moon {
+    transition: none;
+  }
+
+  button:hover,
+  button:active,
+  .button:hover,
+  .button:active {
+    transform: none;
   }
 
   .topic-arrow {
@@ -684,6 +841,12 @@
 
   .no-print {
     display: none !important;
+  }
+
+  .page-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .shadow-soft {

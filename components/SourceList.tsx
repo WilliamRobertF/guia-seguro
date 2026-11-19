@@ -8,7 +8,7 @@ type SourceListProps = {
 
 export function SourceList({ sources, id = "fontes", title = "Fontes" }: SourceListProps) {
   return (
-    <section id={id} aria-labelledby={`${id}-titulo`} className="mt-10 scroll-mt-6">
+    <section id={id} aria-labelledby={`${id}-titulo`} className="mt-10 scroll-mt-6" tabIndex={-1}>
       <h2 id={`${id}-titulo`} className="text-xl font-bold">
         {title}
       </h2>

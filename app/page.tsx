@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiqueDeOlho } from "@/components/FiqueDeOlho";
 import { GoldenRules } from "@/components/GoldenRules";
 import { HeroIllustration } from "@/components/HeroIllustration";
+import { LinkStatus } from "@/components/LinkStatus";
 import { QrNote } from "@/components/QrNote";
 import { StarterKit } from "@/components/StarterKit";
 import { TopicList } from "@/components/TopicList";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main id="conteudo">
+    <main id="conteudo" tabIndex={-1}>
       <section className="shell pt-10 pb-4 sm:pt-16 lg:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-14">
           <div>
@@ -34,9 +35,11 @@ export default function HomePage() {
             <div className="no-print mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="#temas" className="button w-full sm:w-auto">
                 Ver os temas
+                <LinkStatus />
               </Link>
               <Link href="#kit" className="button button-quiet w-full sm:w-auto">
                 Começar por aqui
+                <LinkStatus />
               </Link>
             </div>
           </div>

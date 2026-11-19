@@ -46,6 +46,7 @@ export default function AboutPage() {
         id="privacidade"
         aria-labelledby="privacidade-titulo"
         className="mt-16 scroll-mt-6 border-t border-line pt-10"
+        tabIndex={-1}
       >
         <h2 id="privacidade-titulo" className="text-2xl font-bold sm:text-[1.75rem]">
           Privacidade
@@ -57,6 +58,7 @@ export default function AboutPage() {
         id="creditos"
         aria-labelledby="creditos-titulo"
         className="mt-16 scroll-mt-6 border-t border-line pt-10"
+        tabIndex={-1}
       >
         <h2 id="creditos-titulo" className="text-2xl font-bold sm:text-[1.75rem]">
           Créditos

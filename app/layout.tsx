@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Atkinson_Hyperlegible, Geologica } from "next/font/google";
 import "./globals.css";
+import { BackToTop } from "@/components/BackToTop";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -20,9 +21,12 @@ const geologica = Geologica({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-const shareImage = siteUrl
-  ? { url: "/og.png", width: 1200, height: 630, alt: "Pare. Respire. Confirme." }
-  : undefined;
+const shareImage = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Pare. Respire. Confirme.",
+};
 
 const themeScript = `(function () {
   var stored = null;
@@ -47,18 +51,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: "Guia Seguro",
-    images: shareImage ? [shareImage] : undefined,
+    images: [shareImage],
   },
   twitter: {
     card: "summary_large_image",
-    images: shareImage ? [shareImage.url] : undefined,
+    images: [shareImage.url],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2E1F63",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${atkinson.variable} ${geologica.variable} h-full`}
     >
@@ -69,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#conteudo" className="skip-link">
           Ir para o conteúdo
         </a>
+        <BackToTop />
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />

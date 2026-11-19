@@ -24,6 +24,14 @@ export async function generateMetadata({ params }: TopicPageProps): Promise<Meta
     openGraph: {
       title: topic.title,
       description: topic.summary,
+      images: [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+          alt: "Pare. Respire. Confirme.",
+        },
+      ],
     },
   };
 }

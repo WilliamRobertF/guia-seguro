@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LinkStatus } from "./LinkStatus";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
@@ -9,9 +13,19 @@ const links = [
   { href: "/sobre/", label: "Sobre" },
 ];
 
+function isCurrent(href: string, pathname: string | null) {
+  const path = (pathname ?? "/").replace(/\/$/, "") || "/";
+
+  if (href === "/#temas") return path.startsWith("/temas");
+
+  return path === href.replace(/\/$/, "");
+}
+
 export function SiteHeader() {
+  const pathname = usePathname();
+
   return (
-    <header className="no-print relative bg-brand text-on-brand">
+    <header className="no-print sticky top-0 z-50 bg-brand text-on-brand">
       <div className="shell flex items-center justify-between gap-4 py-3">
         <Link
           href="/"
@@ -43,16 +57,26 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <nav aria-label="Navegação principal" className="hidden lg:block">
             <ul className="flex items-center gap-x-6 font-sans text-base">
-              {links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="inline-flex min-h-11 items-center whitespace-nowrap font-normal text-on-brand-soft no-underline transition-colors duration-150 hover:text-accent active:text-on-brand"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {links.map((link) => {
+                const current = isCurrent(link.href, pathname);
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      aria-current={current ? "page" : undefined}
+                      className={`inline-flex min-h-11 items-center whitespace-nowrap no-underline transition-colors duration-150 hover:text-accent active:text-on-brand ${
+                        current
+                          ? "font-bold text-on-brand"
+                          : "font-normal text-on-brand-soft"
+                      }`}
+                    >
+                      {link.label}
+                      <LinkStatus />
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -78,19 +102,27 @@ export function SiteHeader() {
                 />
               </svg>
             </summary>
-            <div className="absolute inset-x-0 top-full z-40 border-b border-line bg-surface text-ink">
+            <div className="menu-panel absolute inset-x-0 top-full z-40 border-b border-line bg-surface text-ink">
               <nav aria-label="Navegação principal no celular" className="shell">
                 <ul className="divide-y divide-line py-1">
-                  {links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="flex min-h-12 items-center whitespace-nowrap font-sans text-base font-normal text-muted no-underline transition-colors duration-150 hover:text-ink active:text-ink"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {links.map((link) => {
+                    const current = isCurrent(link.href, pathname);
+
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          aria-current={current ? "page" : undefined}
+                          className={`flex min-h-12 items-center whitespace-nowrap font-sans text-base no-underline transition-colors duration-150 hover:text-ink active:text-ink ${
+                            current ? "font-bold text-ink" : "font-normal text-muted"
+                          }`}
+                        >
+                          {link.label}
+                          <LinkStatus />
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
             </div>

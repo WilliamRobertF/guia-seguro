@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Topic } from "@/lib/types";
 import { formatDate } from "@/lib/date";
 import { InternalPageLayout } from "./InternalPageLayout";
+import { LinkStatus } from "./LinkStatus";
 import { ShareButton } from "./ShareButton";
 import { SourceList } from "./SourceList";
 import { TopicIcon } from "./TopicIcon";
@@ -82,6 +83,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         id="como-funciona"
         aria-labelledby="como-funciona-titulo"
         className="mt-16 scroll-mt-6 border-t border-line pt-10"
+        tabIndex={-1}
       >
         <h2
           id="como-funciona-titulo"
@@ -96,6 +98,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         id="o-que-voce-pode-ver"
         aria-labelledby="o-que-voce-pode-ver-titulo"
         className="mt-16 scroll-mt-6 border-t border-line pt-10"
+        tabIndex={-1}
       >
         <h2
           id="o-que-voce-pode-ver-titulo"
@@ -114,6 +117,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         id="o-que-fazer"
         aria-labelledby="o-que-fazer-titulo"
         className="mt-16 scroll-mt-6 border-t border-line pt-10"
+        tabIndex={-1}
       >
         <h2
           id="o-que-fazer-titulo"
@@ -143,6 +147,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
           id="deu-errado"
           aria-labelledby="deu-errado-titulo"
           className="mt-16 scroll-mt-6"
+          tabIndex={-1}
         >
           <div className="rounded-2xl border border-line bg-surface px-5 py-6">
             <h2
@@ -178,6 +183,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
           <div className="grid gap-3 sm:grid-cols-2">
             <Link className="button button-quiet w-full" href="/#temas">
               Voltar para os temas
+              <LinkStatus />
             </Link>
             <Link
               className="button button-quiet w-full"
@@ -185,6 +191,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
             >
               <TopicIcon slug={nextTopic.slug} size="xs" />
               <span>Próximo tema: {nextTopic.title}</span>
+              <LinkStatus />
             </Link>
           </div>
         </nav>

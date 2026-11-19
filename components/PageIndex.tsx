@@ -40,7 +40,7 @@ export function PageIndex({ items }: { items: PageIndexItem[] }) {
     }`;
 
   return (
-    <div className="mb-8 lg:sticky lg:top-6 lg:order-2 lg:mb-0 lg:w-64 lg:self-start">
+    <div className="mb-8 lg:sticky lg:top-[5.25rem] lg:order-2 lg:mb-0 lg:w-64 lg:self-start">
       <details className="rounded-2xl border border-line bg-surface px-4 py-3 lg:hidden">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-bold text-ink [&::-webkit-details-marker]:hidden">
           Nesta página

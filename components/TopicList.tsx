@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { sectionLabels } from "@/content/sections";
 import { topics } from "@/content/topics";
+import { LinkStatus } from "./LinkStatus";
 import { SectionLabel } from "./SectionLabel";
 import { TopicIcon } from "./TopicIcon";
 
 export function TopicList() {
   return (
-    <section id="temas" aria-labelledby="temas-titulo" className="mt-20 scroll-mt-6 sm:mt-24">
+    <section id="temas" aria-labelledby="temas-titulo" className="mt-20 scroll-mt-6 sm:mt-24" tabIndex={-1}>
       <SectionLabel>{sectionLabels.topics}</SectionLabel>
       <h2 id="temas-titulo" className="text-2xl font-bold sm:text-3xl">
         Temas
@@ -42,6 +43,7 @@ export function TopicList() {
                   strokeLinejoin="round"
                 />
               </svg>
+              <LinkStatus />
             </Link>
           </li>
         ))}

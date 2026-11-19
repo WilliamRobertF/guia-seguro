@@ -1,9 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function ShareButton() {
   const [message, setMessage] = useState("");
+  const messageTimer = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (messageTimer.current) window.clearTimeout(messageTimer.current);
+    };
+  }, []);
+
+  function showMessage(text: string) {
+    setMessage(text);
+    if (messageTimer.current) window.clearTimeout(messageTimer.current);
+    messageTimer.current = window.setTimeout(() => {
+      setMessage("");
+      messageTimer.current = null;
+    }, 2000);
+  }
 
   async function sharePage() {
     const url = window.location.href;
@@ -11,12 +27,12 @@ export function ShareButton() {
     try {
       if (typeof navigator.share === "function") {
         await navigator.share({ title: document.title, url });
-        setMessage("Pronto. O link foi compartilhado.");
+        showMessage("Link compartilhado.");
         return;
       }
 
       await navigator.clipboard.writeText(url);
-      setMessage("Link copiado. Agora é só colar no WhatsApp ou no e-mail.");
+      showMessage("Link copiado");
     } catch {
       setMessage("Não foi possível copiar. Selecione o endereço na barra do navegador.");
     }

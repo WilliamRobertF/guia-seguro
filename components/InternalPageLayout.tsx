@@ -19,7 +19,7 @@ export function InternalPageLayout({
   children,
 }: InternalPageLayoutProps) {
   return (
-    <main id="conteudo" className="shell-internal pb-16">
+    <main id="conteudo" className="shell-internal pb-16" tabIndex={-1}>
       <header className="max-w-[44rem] pt-10 sm:pt-14">
         {breadcrumb ? <div className="mb-5">{breadcrumb}</div> : null}
         {icon ? <div className="mb-4">{icon}</div> : null}
