@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { footerContent } from "@/content/footer";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -6,7 +7,7 @@ export function SiteFooter() {
   return (
     <footer className="no-print mt-24 rounded-t-[2rem] bg-footer text-footer-ink">
       <div className="shell py-12 sm:py-14">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-start lg:gap-12">
           <div>
             <div className="flex items-center gap-3">
               <svg
@@ -36,25 +37,57 @@ export function SiteFooter() {
               Conteúdo informativo. O site não dá parecer jurídico.
             </p>
           </div>
-          <div className="text-[1.0625rem]">
-            <p className="text-footer-soft">
-              Este site não usa cookies e não coleta dados. Se você escolher o tema claro ou
-              escuro, a escolha fica guardada só no seu navegador.
-            </p>
-            <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <Link
-                className="font-bold text-footer-ink no-underline transition-colors duration-150 hover:text-accent active:text-on-brand"
-                href="/sobre/"
-              >
-                Sobre o projeto e fontes
-              </Link>
-              <span className="text-footer-soft">{year} Guia Seguro</span>
-            </p>
+
+          <div>
+            <section
+              aria-labelledby="footer-ods"
+              className="rounded-2xl border border-on-brand/20 p-5 sm:p-6"
+            >
+              <div className="flex items-start gap-4">
+                <span
+                  aria-hidden="true"
+                  className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-[#F36D25] font-brand text-[1.75rem] font-bold leading-none text-white"
+                >
+                  9
+                </span>
+                <div>
+                  <h2
+                    id="footer-ods"
+                    className="font-brand text-lg font-bold leading-snug text-footer-ink"
+                  >
+                    {footerContent.odsTitle}
+                  </h2>
+                  <p className="mt-2 text-[1.0625rem] leading-relaxed text-footer-soft">
+                    {footerContent.odsText}
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <div className="mt-6 text-[1.0625rem]">
+              <p className="text-footer-soft">
+                Este site não usa cookies e não coleta dados. Se você escolher o tema claro
+                ou escuro, a escolha fica guardada só no seu navegador.
+              </p>
+              <p className="mt-5">
+                <Link
+                  className="font-bold text-footer-ink no-underline transition-colors duration-150 hover:text-accent active:text-on-brand"
+                  href="/sobre/"
+                >
+                  Sobre o projeto e fontes
+                </Link>
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div className="mt-10 border-t border-on-brand/20 pt-6">
+          <p className="text-center text-sm text-footer-soft">
+            © {year} Guia Seguro. Todos os direitos reservados. | Desenvolvido por{" "}
+            {footerContent.developer}.
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-

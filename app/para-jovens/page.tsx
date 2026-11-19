@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InternalPageLayout } from "@/components/InternalPageLayout";
-import { ShareButton } from "@/components/ShareButton";
 import { studentsPage } from "@/content/students";
 import { formatDate } from "@/lib/date";
 
@@ -53,9 +52,6 @@ export default function StudentsPage() {
         <p className="text-[1.0625rem] text-ink-soft">
           Revisado em {formatDate(studentsPage.reviewedAt)}.
         </p>
-        <div className="no-print mt-6">
-          <ShareButton />
-        </div>
       </footer>
     </InternalPageLayout>
   );

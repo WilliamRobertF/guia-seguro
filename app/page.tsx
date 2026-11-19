@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FiqueDeOlho } from "@/components/FiqueDeOlho";
 import { GoldenRules } from "@/components/GoldenRules";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { LinkStatus } from "@/components/LinkStatus";
-import { QrNote } from "@/components/QrNote";
 import { StarterKit } from "@/components/StarterKit";
 import { TopicList } from "@/components/TopicList";
 import { homeText } from "@/content/rules";
@@ -53,8 +51,6 @@ export default function HomePage() {
         <GoldenRules />
         <StarterKit />
         <TopicList />
-        <FiqueDeOlho />
-        <QrNote />
       </div>
     </main>
   );

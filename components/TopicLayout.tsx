@@ -3,7 +3,6 @@ import type { Topic } from "@/lib/types";
 import { formatDate } from "@/lib/date";
 import { InternalPageLayout } from "./InternalPageLayout";
 import { LinkStatus } from "./LinkStatus";
-import { ShareButton } from "./ShareButton";
 import { SourceList } from "./SourceList";
 import { TopicIcon } from "./TopicIcon";
 
@@ -175,9 +174,6 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
           Revisado em {formatDate(topic.reviewedAt)}.
         </p>
         <SourceList sources={topic.sources} />
-        <div className="no-print mt-8">
-          <ShareButton />
-        </div>
 
         <nav aria-label="Navegação entre temas" className="mt-12 border-t border-line pt-6">
           <div className="grid gap-3 sm:grid-cols-2">

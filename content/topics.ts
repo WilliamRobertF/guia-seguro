@@ -79,7 +79,7 @@ export const topics: Topic[] = [
     slug: "links-qr-e-ligacoes",
     title: "Links, QR Codes e ligações: como conferir antes de agir",
     summary:
-      "Um jeito calmo de verificar mensagens, códigos QR e telefonemas que pedem algo de você.",
+      "Um jeito calmo de verificar mensagens, códigos QR e telefonemas que pedem informações suas.",
     goodNews:
       "Você não precisa reconhecer todos os golpes. Muitos dependem de pressa, e parar para conferir já funciona.",
     howItWorks:

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InternalPageLayout } from "@/components/InternalPageLayout";
-import { ShareButton } from "@/components/ShareButton";
 import { SourceList } from "@/components/SourceList";
 import { teachPage } from "@/content/teach";
 import { formatDate } from "@/lib/date";
@@ -65,9 +64,6 @@ export default function TeachPage() {
           Revisado em {formatDate(teachPage.reviewedAt)}.
         </p>
         <SourceList sources={teachPage.sources} />
-        <div className="no-print mt-8">
-          <ShareButton />
-        </div>
       </footer>
     </InternalPageLayout>
   );
