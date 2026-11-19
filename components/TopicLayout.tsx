@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/date";
 import { InternalPageLayout } from "./InternalPageLayout";
 import { ShareButton } from "./ShareButton";
 import { SourceList } from "./SourceList";
+import { TopicIcon } from "./TopicIcon";
 
 function CheckIcon({ className = "mt-1" }: { className?: string }) {
   return (
@@ -47,6 +48,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
     <InternalPageLayout
       title={topic.title}
       subtitle={topic.summary}
+      icon={<TopicIcon slug={topic.slug} size="lg" />}
       indexItems={contents}
       breadcrumb={
         <nav aria-label="Você está aqui" className="no-print text-[1.0625rem]">
@@ -181,7 +183,8 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
               className="button button-quiet w-full"
               href={`/temas/${nextTopic.slug}/`}
             >
-              Próximo tema: {nextTopic.title}
+              <TopicIcon slug={nextTopic.slug} size="xs" />
+              <span>Próximo tema: {nextTopic.title}</span>
             </Link>
           </div>
         </nav>

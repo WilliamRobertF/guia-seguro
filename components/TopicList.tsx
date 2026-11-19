@@ -11,16 +11,16 @@ export function TopicList() {
       <h2 id="temas-titulo" className="text-2xl font-bold sm:text-3xl">
         Temas
       </h2>
-      <ul className="mt-8 grid gap-x-12 border-b border-line lg:grid-cols-2">
+      <ul className="mt-8 columns-1 gap-x-12 border-b border-line lg:columns-2">
         {topics.map((topic) => (
-          <li key={topic.slug}>
+          <li key={topic.slug} className="break-inside-avoid border-t border-line">
             <Link
               href={`/temas/${topic.slug}/`}
-              className="topic-row group flex min-h-11 w-full items-start justify-between gap-4 border-t border-line px-3 py-6 no-underline transition-colors duration-150 hover:bg-surface-2 active:bg-surface-2"
+              className="topic-row group flex cursor-pointer items-start justify-between gap-4 py-6 no-underline transition-colors duration-150"
             >
-              <TopicIcon slug={topic.slug} />
+              <TopicIcon slug={topic.slug} size="sm" />
               <span className="flex min-w-0 flex-1 flex-col gap-1">
-                <span className="font-brand text-xl font-bold text-ink group-hover:text-link group-active:text-link">
+                <span className="font-brand text-xl font-bold text-ink group-hover:text-link group-focus-visible:text-link group-active:text-link">
                   {topic.title}
                 </span>
                 <span className="max-w-[49ch] text-ink-soft">{topic.summary}</span>
@@ -31,7 +31,7 @@ export function TopicList() {
                 viewBox="0 0 20 20"
                 aria-hidden="true"
                 focusable="false"
-                className="topic-arrow no-print mt-2 shrink-0 text-ink-soft group-hover:text-link"
+                className="topic-arrow mt-2 shrink-0 text-ink-soft group-hover:text-link group-focus-visible:text-link"
               >
                 <path
                   d="M4 10h12M11 5l5 5-5 5"

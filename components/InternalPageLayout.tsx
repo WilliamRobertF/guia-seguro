@@ -5,6 +5,7 @@ type InternalPageLayoutProps = {
   title: string;
   subtitle?: string;
   breadcrumb?: ReactNode;
+  icon?: ReactNode;
   indexItems: PageIndexItem[];
   children: ReactNode;
 };
@@ -13,6 +14,7 @@ export function InternalPageLayout({
   title,
   subtitle,
   breadcrumb,
+  icon,
   indexItems,
   children,
 }: InternalPageLayoutProps) {
@@ -20,6 +22,7 @@ export function InternalPageLayout({
     <main id="conteudo" className="shell-internal pb-16">
       <header className="max-w-[44rem] pt-10 sm:pt-14">
         {breadcrumb ? <div className="mb-5">{breadcrumb}</div> : null}
+        {icon ? <div className="mb-4">{icon}</div> : null}
         <h1 className="text-[2.25rem] leading-[1.05] font-bold sm:text-[3rem]">
           {title}
         </h1>

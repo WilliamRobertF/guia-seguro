@@ -8,28 +8,51 @@ import {
   WifiIcon,
 } from "./icons";
 
-export const topicIconItems = {
-  "whatsapp-e-codigos": { Icon: ChatIcon, tint: "bg-tint-lavender text-link" },
-  "dinheiro-a-receber": { Icon: BanknoteIcon, tint: "bg-tint-yellow text-attention-ink" },
-  "links-qr-e-ligacoes": { Icon: QrIcon, tint: "bg-tint-blue text-link" },
-  "senhas-e-duas-etapas": { Icon: KeyIcon, tint: "bg-tint-peach text-link" },
-  wifi: { Icon: WifiIcon, tint: "bg-tint-mint text-safe" },
-  "computador-e-celular": { Icon: LaptopIcon, tint: "bg-tint-lavender text-link" },
-  "dados-de-terceiros": { Icon: PhotoIcon, tint: "bg-tint-pink text-link" },
+const topicIcons = {
+  "whatsapp-e-codigos": ChatIcon,
+  "dinheiro-a-receber": BanknoteIcon,
+  "links-qr-e-ligacoes": QrIcon,
+  "senhas-e-duas-etapas": KeyIcon,
+  wifi: WifiIcon,
+  "computador-e-celular": LaptopIcon,
+  "dados-de-terceiros": PhotoIcon,
 } as const;
 
-export function TopicIcon({ slug }: { slug: string }) {
-  const item = topicIconItems[slug as keyof typeof topicIconItems];
-  if (!item) return null;
+const iconSizes = {
+  xs: "size-10",
+  sm: "size-12",
+  md: "size-14",
+  lg: "size-16",
+} as const;
 
-  const { Icon, tint } = item;
+const iconPixels = {
+  xs: 20,
+  sm: 22,
+  md: 24,
+  lg: 28,
+} as const;
+
+type TopicIconSize = keyof typeof iconSizes;
+
+export function TopicIcon({
+  slug,
+  size = "sm",
+  className = "",
+}: {
+  slug: string;
+  size?: TopicIconSize;
+  className?: string;
+}) {
+  const Icon = topicIcons[slug as keyof typeof topicIcons];
+  if (!Icon) return null;
 
   return (
     <span
+      data-topic={slug}
       aria-hidden="true"
-      className={`no-print mt-0.5 hidden size-12 shrink-0 items-center justify-center rounded-2xl border border-line sm:flex ${tint}`}
+      className={`topic-icon inline-flex shrink-0 items-center justify-center rounded-2xl bg-[var(--tc-bg)] text-[var(--tc-fg)] group-hover:bg-[var(--tc-fg)] group-hover:text-[var(--bg)] group-focus-visible:bg-[var(--tc-fg)] group-focus-visible:text-[var(--bg)] ${iconSizes[size]} ${className}`}
     >
-      <Icon size={22} />
+      <Icon size={iconPixels[size]} />
     </span>
   );
 }

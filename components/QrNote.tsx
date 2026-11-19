@@ -14,7 +14,7 @@ export function QrNote() {
         <div>
           <SectionLabel>{sectionLabels.folder}</SectionLabel>
           <h2 id="qr-note" className="flex items-start gap-3 text-2xl font-bold">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-tint-lavender text-link">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-surface text-link">
               <QrIcon size={22} />
             </span>
             <span>O QR Code do folder leva até aqui</span>

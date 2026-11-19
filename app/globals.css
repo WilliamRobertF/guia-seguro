@@ -106,6 +106,107 @@
   }
 }
 
+[data-topic="whatsapp-e-codigos"] {
+  --tc-bg: #ddf3e4;
+  --tc-fg: #1b7a45;
+}
+
+[data-topic="dinheiro-a-receber"] {
+  --tc-bg: #ffebbe;
+  --tc-fg: #8a5a00;
+}
+
+[data-topic="links-qr-e-ligacoes"] {
+  --tc-bg: #dceafb;
+  --tc-fg: #1f5fae;
+}
+
+[data-topic="senhas-e-duas-etapas"] {
+  --tc-bg: #e6def7;
+  --tc-fg: #5a38b8;
+}
+
+[data-topic="wifi"] {
+  --tc-bg: #d7f1f3;
+  --tc-fg: #12707a;
+}
+
+[data-topic="computador-e-celular"] {
+  --tc-bg: #e3e7ee;
+  --tc-fg: #3f4d63;
+}
+
+[data-topic="dados-de-terceiros"] {
+  --tc-bg: #fbdde8;
+  --tc-fg: #a8305f;
+}
+
+[data-theme="dark"] [data-topic] {
+  --tc-bg: color-mix(in srgb, var(--tc-fg) 16%, var(--surface));
+}
+
+[data-theme="dark"] [data-topic="whatsapp-e-codigos"] {
+  --tc-fg: #6fcf97;
+}
+
+[data-theme="dark"] [data-topic="dinheiro-a-receber"] {
+  --tc-fg: #f2b84b;
+}
+
+[data-theme="dark"] [data-topic="links-qr-e-ligacoes"] {
+  --tc-fg: #8db8f2;
+}
+
+[data-theme="dark"] [data-topic="senhas-e-duas-etapas"] {
+  --tc-fg: #bba4f5;
+}
+
+[data-theme="dark"] [data-topic="wifi"] {
+  --tc-fg: #6bd0da;
+}
+
+[data-theme="dark"] [data-topic="computador-e-celular"] {
+  --tc-fg: #aeb9cc;
+}
+
+[data-theme="dark"] [data-topic="dados-de-terceiros"] {
+  --tc-fg: #f29bbb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) [data-topic] {
+    --tc-bg: color-mix(in srgb, var(--tc-fg) 16%, var(--surface));
+  }
+
+  :root:not([data-theme]) [data-topic="whatsapp-e-codigos"] {
+    --tc-fg: #6fcf97;
+  }
+
+  :root:not([data-theme]) [data-topic="dinheiro-a-receber"] {
+    --tc-fg: #f2b84b;
+  }
+
+  :root:not([data-theme]) [data-topic="links-qr-e-ligacoes"] {
+    --tc-fg: #8db8f2;
+  }
+
+  :root:not([data-theme]) [data-topic="senhas-e-duas-etapas"] {
+    --tc-fg: #bba4f5;
+  }
+
+  :root:not([data-theme]) [data-topic="wifi"] {
+    --tc-fg: #6bd0da;
+  }
+
+  :root:not([data-theme]) [data-topic="computador-e-celular"] {
+    --tc-fg: #aeb9cc;
+  }
+
+  :root:not([data-theme]) [data-topic="dados-de-terceiros"] {
+    --tc-fg: #f29bbb;
+  }
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -326,8 +427,75 @@
     transition: translate 150ms ease;
   }
 
-  .topic-row:hover .topic-arrow {
-    translate: 2px 0;
+  .topic-row:hover .topic-arrow,
+  .topic-row:focus-visible .topic-arrow {
+    translate: 4px 0;
+  }
+
+  .topic-row:hover .topic-icon,
+  .topic-row:focus-visible .topic-icon {
+    background-color: var(--tc-fg);
+    color: var(--bg);
+  }
+
+  .hero-orbit {
+    animation: hero-orbit-spin 90s linear infinite;
+    transform-origin: center;
+  }
+
+  .hero-card {
+    animation: hero-card-counter 90s linear infinite;
+    transform-origin: center;
+  }
+
+  .hero-bubble,
+  .hero-breathe-ring,
+  .hero-check {
+    transform-origin: center;
+  }
+
+  .hero-check-path {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 0;
+  }
+
+  .hero-tag.is-active {
+    background-color: var(--brand);
+    color: var(--on-brand);
+  }
+
+  .hero-illustration:hover .hero-orbit,
+  .hero-illustration:hover .hero-card,
+  .hero-illustration:focus-within .hero-orbit,
+  .hero-illustration:focus-within .hero-card,
+  .hero-illustration.is-playing .hero-orbit,
+  .hero-illustration.is-playing .hero-card,
+  .hero-illustration.is-paused .hero-orbit,
+  .hero-illustration.is-paused .hero-card {
+    animation-play-state: paused;
+  }
+
+  .hero-illustration.is-playing .hero-bubble {
+    animation: hero-breathe 4s ease-in-out 1.5s 1 both;
+  }
+
+  .hero-illustration.is-playing .hero-breathe-ring {
+    animation: hero-breathe-ring 4s ease-out 1.5s 1 both;
+  }
+
+  .hero-illustration.is-playing .hero-check-path {
+    animation: hero-check-draw 550ms ease-out 5.5s 1 both;
+  }
+
+  .hero-illustration.is-playing .hero-check {
+    animation: hero-check-pop 350ms ease-out 5.95s 1 both;
+  }
+
+  .hero-illustration.is-paused .hero-bubble,
+  .hero-illustration.is-paused .hero-breathe-ring,
+  .hero-illustration.is-paused .hero-check,
+  .hero-illustration.is-paused .hero-check-path {
+    animation-play-state: paused;
   }
 
   .skip-link {
@@ -350,6 +518,58 @@
 
   .skip-link:focus {
     top: 0.5rem;
+  }
+}
+
+@keyframes hero-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-card-counter {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes hero-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hero-breathe-ring {
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes hero-check-draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-check-pop {
+  0% {
+    transform: scale(1.15);
+  }
+  60%,
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -389,8 +609,32 @@
     transition: none;
   }
 
-  .topic-row:hover .topic-arrow {
+  .topic-row:hover .topic-arrow,
+  .topic-row:focus-visible .topic-arrow {
     translate: none;
+  }
+
+  .hero-orbit,
+  .hero-card,
+  .hero-bubble,
+  .hero-breathe-ring,
+  .hero-check,
+  .hero-check-path {
+    animation: none !important;
+  }
+
+  .hero-bubble,
+  .hero-breathe-ring,
+  .hero-check {
+    transform: none !important;
+  }
+
+  .hero-breathe-ring {
+    opacity: 0 !important;
+  }
+
+  .hero-check-path {
+    stroke-dashoffset: 0 !important;
   }
 }
 

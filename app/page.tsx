@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FiqueDeOlho } from "@/components/FiqueDeOlho";
 import { GoldenRules } from "@/components/GoldenRules";
-import { HeroScene } from "@/components/HeroScene";
+import { HeroIllustration } from "@/components/HeroIllustration";
 import { QrNote } from "@/components/QrNote";
 import { StarterKit } from "@/components/StarterKit";
 import { TopicList } from "@/components/TopicList";
@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <main id="conteudo">
       <section className="shell pt-10 pb-4 sm:pt-16 lg:pt-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-14">
           <div>
             <h1 className="text-[2.9rem] leading-[1.02] font-bold tracking-tight sm:text-[4rem] lg:text-[4.5rem]">
               Pare.
@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <HeroScene />
+            <HeroIllustration />
           </div>
         </div>
       </section>
