@@ -3,9 +3,9 @@ import { writeFile } from "node:fs/promises";
 
 const width = 1200;
 const height = 630;
-const paper = [0x2a, 0x1e, 0x50];
-const ink = [0xfb, 0xf8, 0xff];
-const trust = [0xe7, 0xa5, 0x19];
+const paper = [0x2e, 0x1f, 0x63];
+const ink = [0xff, 0xff, 0xff];
+const trust = [0xf2, 0xa9, 0x00];
 
 const pixels = Buffer.alloc(width * height * 3);
 for (let i = 0; i < pixels.length; i += 3) {

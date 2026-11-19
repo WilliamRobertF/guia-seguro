@@ -29,7 +29,7 @@ export default function HomePage() {
             </h1>
             <HeroIconRow />
             <p className="mt-6 max-w-[46ch] text-xl text-ink-soft">{homeText.support}</p>
-            <p className="mt-6 max-w-[46ch] rounded-2xl border border-line border-l-4 border-l-trust bg-panel px-5 py-4 text-ink-soft">
+            <p className="mt-6 max-w-[46ch] rounded-2xl border border-line border-l-4 border-l-link bg-panel px-5 py-4 text-ink-soft">
               {homeText.reassurance}
             </p>
             <div className="no-print mt-8 flex flex-col gap-3 sm:flex-row">

@@ -18,12 +18,12 @@ export function SiteFooter() {
               >
                 <path
                   d="M5 4h20a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-9l-6 5v-5H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"
-                  fill="var(--cta)"
+                  fill="var(--accent)"
                 />
                 <path
                   d="M9 12l4 4 8-8"
                   fill="none"
-                  stroke="var(--on-cta)"
+                  stroke="var(--on-accent)"
                   strokeWidth="2.6"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -38,7 +38,8 @@ export function SiteFooter() {
           </div>
           <div className="text-[1.0625rem]">
             <p className="text-footer-soft">
-              Este site não usa cookies e não coleta dados.
+              Este site não usa cookies e não coleta dados. Se você escolher o tema claro ou
+              escuro, a escolha fica guardada só no seu navegador.
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
               <Link className="underline underline-offset-4 hover:no-underline" href="/sobre/">

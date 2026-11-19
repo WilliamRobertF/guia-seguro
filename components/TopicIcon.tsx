@@ -9,13 +9,13 @@ import {
 } from "./icons";
 
 const items = {
-  "whatsapp-e-codigos": { Icon: ChatIcon, tint: "bg-tint-lavender text-trust" },
-  "dinheiro-a-receber": { Icon: BanknoteIcon, tint: "bg-tint-yellow text-brand" },
-  "links-qr-e-ligacoes": { Icon: QrIcon, tint: "bg-tint-blue text-trust" },
-  "senhas-e-duas-etapas": { Icon: KeyIcon, tint: "bg-tint-peach text-trust" },
+  "whatsapp-e-codigos": { Icon: ChatIcon, tint: "bg-tint-lavender text-link" },
+  "dinheiro-a-receber": { Icon: BanknoteIcon, tint: "bg-tint-yellow text-attention-ink" },
+  "links-qr-e-ligacoes": { Icon: QrIcon, tint: "bg-tint-blue text-link" },
+  "senhas-e-duas-etapas": { Icon: KeyIcon, tint: "bg-tint-peach text-link" },
   wifi: { Icon: WifiIcon, tint: "bg-tint-mint text-safe" },
-  "computador-e-celular": { Icon: LaptopIcon, tint: "bg-tint-lavender text-trust" },
-  "dados-de-terceiros": { Icon: PhotoIcon, tint: "bg-tint-pink text-trust" },
+  "computador-e-celular": { Icon: LaptopIcon, tint: "bg-tint-lavender text-link" },
+  "dados-de-terceiros": { Icon: PhotoIcon, tint: "bg-tint-pink text-link" },
 } as const;
 
 export function TopicIcon({ slug }: { slug: string }) {

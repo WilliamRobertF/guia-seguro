@@ -1,8 +1,8 @@
 import { writeFile } from "node:fs/promises";
 
 const size = 32;
-const background = [0x2a, 0x1e, 0x50];
-const check = [0xe7, 0xa5, 0x19];
+const background = [0x2e, 0x1f, 0x63];
+const check = [0xf2, 0xa9, 0x00];
 const radius = 7;
 const samples = 4;
 

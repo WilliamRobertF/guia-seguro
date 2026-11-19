@@ -8,13 +8,13 @@ export function QrNote() {
   return (
     <section
       aria-labelledby="qr-note"
-      className="mt-20 rounded-3xl border border-line bg-panel px-6 py-7 shadow-soft sm:mt-24 sm:px-8 sm:py-9"
+      className="mt-20 rounded-3xl border border-line bg-surface px-6 py-7 shadow-soft sm:mt-24 sm:px-8 sm:py-9"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-12">
         <div>
           <SectionLabel>{sectionLabels.folder}</SectionLabel>
           <h2 id="qr-note" className="flex items-start gap-3 text-2xl font-bold">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-tint-lavender text-trust">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-tint-lavender text-link">
               <QrIcon size={22} />
             </span>
             <span>O QR Code do folder leva até aqui</span>
@@ -28,7 +28,7 @@ export function QrNote() {
             escrito ao lado do código no folder.
           </p>
           <p
-            className={`mt-5 rounded-xl border border-line bg-mist px-4 py-3 font-bold ${
+            className={`mt-5 rounded-xl border border-line bg-surface-2 px-4 py-3 font-bold ${
               siteUrl ? "break-all" : ""
             }`}
           >

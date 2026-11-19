@@ -65,7 +65,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         </header>
 
         {topic.notice ? (
-          <aside className="mt-7 rounded-2xl border border-attention-line bg-attention px-5 py-4 text-ink">
+          <aside className="mt-7 rounded-2xl border border-attention-line bg-attention px-5 py-4 text-attention-ink">
             <p>{topic.notice}</p>
           </aside>
         ) : null}

@@ -24,6 +24,16 @@ const shareImage = siteUrl
   ? { url: "/og.png", width: 1200, height: 630, alt: "Pare. Respire. Confirme." }
   : undefined;
 
+const themeScript = `(function () {
+  var stored = null;
+  try {
+    stored = window.localStorage.getItem("tema");
+  } catch (error) {}
+  var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var theme = stored === "dark" || stored === "light" ? stored : systemDark ? "dark" : "light";
+  document.documentElement.dataset.theme = theme;
+})();`;
+
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
@@ -47,7 +57,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${atkinson.variable} ${geologica.variable} h-full`}>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className={`${atkinson.variable} ${geologica.variable} h-full`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-full flex-col">
         <a href="#conteudo" className="skip-link">
           Ir para o conteúdo

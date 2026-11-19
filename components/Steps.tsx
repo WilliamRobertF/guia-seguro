@@ -5,7 +5,7 @@ export function Steps({ steps }: { steps: string[] }) {
         <li key={step} className="flex gap-4">
           <span
             aria-hidden="true"
-            className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full bg-trust-soft font-bold text-trust"
+            className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-2 font-bold text-link"
           >
             {index + 1}
           </span>

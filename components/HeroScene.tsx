@@ -14,7 +14,7 @@ const tiles = [
   {
     Icon: ChatIcon,
     position: "left-[1%] top-[16%] -rotate-6",
-    tint: "bg-tint-lavender text-trust",
+    tint: "bg-tint-lavender text-link",
     size: 26,
   },
   {
@@ -26,37 +26,37 @@ const tiles = [
   {
     Icon: BookIcon,
     position: "right-[1%] top-[15%] rotate-6",
-    tint: "bg-tint-blue text-trust",
+    tint: "bg-tint-blue text-link",
     size: 26,
   },
   {
     Icon: HeartIcon,
     position: "left-[8%] top-[49%] rotate-4",
-    tint: "bg-tint-pink text-trust",
+    tint: "bg-tint-pink text-link",
     size: 24,
   },
   {
     Icon: SearchIcon,
     position: "right-[5%] top-[47%] -rotate-5",
-    tint: "bg-tint-peach text-trust",
+    tint: "bg-tint-peach text-link",
     size: 26,
   },
   {
     Icon: PlayIcon,
     position: "bottom-[7%] left-[15%] rotate-5",
-    tint: "bg-tint-yellow text-brand",
+    tint: "bg-tint-yellow text-attention-ink",
     size: 24,
   },
   {
     Icon: FolderIcon,
     position: "bottom-[9%] right-[9%] -rotate-4",
-    tint: "bg-tint-lavender text-trust",
+    tint: "bg-tint-lavender text-link",
     size: 26,
   },
   {
     Icon: PencilIcon,
     position: "bottom-0 left-[44%] rotate-2",
-    tint: "bg-tint-blue text-trust",
+    tint: "bg-tint-blue text-link",
     size: 24,
   },
 ];
@@ -88,8 +88,8 @@ export function HeroScene() {
       className="no-print relative mx-auto aspect-square w-full max-w-[27rem] select-none"
     >
       <span className="absolute inset-[7%] rounded-full bg-hero" />
-      <span className="absolute left-[36%] top-[7%] size-3 rounded-full bg-cta" />
-      <span className="absolute bottom-[20%] left-[35%] size-2.5 rounded-full bg-trust/50" />
+      <span className="absolute left-[36%] top-[7%] size-3 rounded-full bg-accent" />
+      <span className="absolute bottom-[20%] left-[35%] size-2.5 rounded-full bg-link/50" />
 
       {tiles.map(({ Icon, position, tint, size }) => (
         <div key={position} className={`absolute ${position}`}>
@@ -97,8 +97,8 @@ export function HeroScene() {
         </div>
       ))}
 
-      <div className="absolute left-1/2 top-1/2 w-[56%] -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-line bg-panel p-6 shadow-soft">
-        <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-cta text-on-cta">
+      <div className="absolute left-1/2 top-1/2 w-[56%] -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-line bg-surface p-6 shadow-soft">
+        <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-accent text-on-accent">
           <CheckIcon size={32} />
         </div>
         <div className="mt-5 flex justify-center gap-2">
@@ -106,17 +106,17 @@ export function HeroScene() {
           <span className="size-2 rounded-full bg-tint-yellow" />
           <span className="size-2 rounded-full bg-tint-mint" />
         </div>
-        <span className="absolute -bottom-3 left-1/2 size-7 -translate-x-1/2 rotate-45 border-b border-r border-line bg-panel" />
+        <span className="absolute -bottom-3 left-1/2 size-7 -translate-x-1/2 rotate-45 border-b border-r border-line bg-surface" />
       </div>
     </div>
   );
 }
 
 const rowTiles = [
-  { Icon: ChatIcon, tint: "bg-tint-lavender text-trust" },
+  { Icon: ChatIcon, tint: "bg-tint-lavender text-link" },
   { Icon: WifiIcon, tint: "bg-tint-mint text-safe" },
-  { Icon: BookIcon, tint: "bg-tint-blue text-trust" },
-  { Icon: HeartIcon, tint: "bg-tint-pink text-trust" },
+  { Icon: BookIcon, tint: "bg-tint-blue text-link" },
+  { Icon: HeartIcon, tint: "bg-tint-pink text-link" },
 ];
 
 export function HeroIconRow() {

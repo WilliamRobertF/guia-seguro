@@ -2,95 +2,150 @@
 
 :root {
   color-scheme: light;
-  --ink: #241d33;
-  --ink-soft: #4c4757;
-  --paper: #fbfafc;
-  --panel: #ffffff;
-  --line: #e3deee;
-  --trust: #6b4fa8;
-  --trust-soft: #eee9f9;
-  --on-trust: #ffffff;
-  --cta: #e7a519;
-  --on-cta: #2a1e50;
-  --brand: #2a1e50;
-  --safe: #147a5a;
-  --safe-soft: #e3f3ec;
-  --attention: #fbf0cf;
-  --attention-line: #e8d49a;
-  --hero: #f2edfa;
-  --mist: #f4f1fa;
-  --tint-lavender: #ece7fb;
-  --tint-yellow: #fbf0cf;
-  --tint-mint: #e0f3e9;
-  --tint-blue: #e3f2fb;
-  --tint-peach: #fbe8dd;
-  --tint-pink: #fbe6ef;
-  --footer-bg: #2a1e50;
-  --footer-ink: #fbf8ff;
-  --footer-soft: #d3c9e8;
+  --bg: #f7f4fc;
+  --surface: #ffffff;
+  --surface-2: #eee8f8;
+  --line: #ddd5ee;
+  --ink: #241a3f;
+  --muted: #5b5275;
+  --link: #5a38b8;
+  --brand: #2e1f63;
+  --on-brand: #ffffff;
+  --accent: #f2a900;
+  --on-accent: #241a3f;
+  --safe: #17794d;
+  --attention-bg: #fff1cf;
+  --attention-ink: #4a3300;
+  --attention-line: #e7c873;
+  --focus: #5a38b8;
+
+  --on-brand-soft: color-mix(in srgb, var(--on-brand) 78%, var(--brand));
+  --safe-soft: color-mix(in srgb, var(--safe) 12%, var(--surface));
+  --tint-lavender: color-mix(in srgb, var(--link) 10%, var(--surface));
+  --tint-yellow: var(--attention-bg);
+  --tint-mint: color-mix(in srgb, var(--safe) 14%, var(--surface));
+  --tint-blue: color-mix(in srgb, var(--link) 8%, var(--surface));
+  --tint-peach: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  --tint-pink: color-mix(in srgb, var(--link) 7%, var(--surface));
   --shadow-soft: 0 24px 40px rgba(110, 90, 160, 0.16);
+
+  --paper: var(--bg);
+  --panel: var(--surface);
+  --ink-soft: var(--muted);
+  --trust: var(--link);
+  --trust-soft: var(--surface-2);
+  --cta: var(--accent);
+  --on-cta: var(--on-accent);
+  --attention: var(--attention-bg);
+  --hero: var(--surface-2);
+  --mist: var(--surface-2);
+  --footer-bg: var(--brand);
+  --footer-ink: var(--on-brand);
+  --footer-soft: var(--on-brand-soft);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16121f;
+  --surface: #1f1929;
+  --surface-2: #241e31;
+  --line: #3a3346;
+  --ink: #f3edfb;
+  --muted: #c8bdd8;
+  --link: #c9b6f0;
+  --brand: #2e1f63;
+  --on-brand: #ffffff;
+  --accent: #e7a519;
+  --on-accent: #241a3a;
+  --safe: #9ed3b5;
+  --attention-bg: #3a2f1a;
+  --attention-ink: #f3edfb;
+  --attention-line: #5c4a2c;
+  --focus: #e7a519;
+  --safe-soft: #1e2b25;
+  --trust-soft: #2c2540;
+  --hero: #1f1a2b;
+  --tint-lavender: #2c2540;
+  --tint-yellow: #3a2f1a;
+  --tint-mint: #1e2f27;
+  --tint-blue: #1c2b36;
+  --tint-peach: #38261f;
+  --tint-pink: #36202b;
+  --shadow-soft: 0 24px 40px rgba(0, 0, 0, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     color-scheme: dark;
-    --ink: #f3edfb;
-    --ink-soft: #c8bdd8;
-    --paper: #16121f;
-    --panel: #1f1929;
+    --bg: #16121f;
+    --surface: #1f1929;
+    --surface-2: #241e31;
     --line: #3a3346;
-    --trust: #c9b6f0;
-    --trust-soft: #2c2540;
-    --on-trust: #1b1428;
-    --cta: #e7a519;
-    --on-cta: #241a3a;
-    --brand: #f3edfb;
+    --ink: #f3edfb;
+    --muted: #c8bdd8;
+    --link: #c9b6f0;
+    --brand: #2e1f63;
+    --on-brand: #ffffff;
+    --accent: #e7a519;
+    --on-accent: #241a3a;
     --safe: #9ed3b5;
-    --safe-soft: #1e2b25;
-    --attention: #3a2f1a;
+    --attention-bg: #3a2f1a;
+    --attention-ink: #f3edfb;
     --attention-line: #5c4a2c;
+    --focus: #e7a519;
+    --safe-soft: #1e2b25;
+    --trust-soft: #2c2540;
     --hero: #1f1a2b;
-    --mist: #241e31;
     --tint-lavender: #2c2540;
     --tint-yellow: #3a2f1a;
     --tint-mint: #1e2f27;
     --tint-blue: #1c2b36;
     --tint-peach: #38261f;
     --tint-pink: #36202b;
-    --footer-bg: #241a3d;
-    --footer-ink: #fbf8ff;
-    --footer-soft: #cbbfe0;
     --shadow-soft: 0 24px 40px rgba(0, 0, 0, 0.35);
   }
 }
 
 @theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-paper: var(--paper);
-  --color-panel: var(--panel);
+  --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-trust: var(--trust);
-  --color-trust-soft: var(--trust-soft);
-  --color-on-trust: var(--on-trust);
+  --color-link: var(--link);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-on-brand-soft: var(--on-brand-soft);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-attention-bg: var(--attention-bg);
+  --color-attention-ink: var(--attention-ink);
+  --color-attention-line: var(--attention-line);
   --color-safe: var(--safe);
   --color-safe-soft: var(--safe-soft);
-  --color-attention: var(--attention);
-  --color-attention-line: var(--attention-line);
-  --color-cta: var(--cta);
-  --color-on-cta: var(--on-cta);
-  --color-brand: var(--brand);
-  --color-hero: var(--hero);
-  --color-mist: var(--mist);
+  --color-focus: var(--focus);
   --color-tint-lavender: var(--tint-lavender);
   --color-tint-yellow: var(--tint-yellow);
   --color-tint-mint: var(--tint-mint);
   --color-tint-blue: var(--tint-blue);
   --color-tint-peach: var(--tint-peach);
   --color-tint-pink: var(--tint-pink);
-  --color-footer: var(--footer-bg);
-  --color-footer-ink: var(--footer-ink);
-  --color-footer-soft: var(--footer-soft);
+
+  --color-paper: var(--bg);
+  --color-panel: var(--surface);
+  --color-ink-soft: var(--muted);
+  --color-trust: var(--link);
+  --color-trust-soft: var(--trust-soft);
+  --color-cta: var(--accent);
+  --color-on-cta: var(--on-accent);
+  --color-attention: var(--attention-bg);
+  --color-hero: var(--hero);
+  --color-mist: var(--mist);
+  --color-footer: var(--brand);
+  --color-footer-ink: var(--on-brand);
+  --color-footer-soft: var(--on-brand-soft);
+
   --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-geologica), ui-sans-serif, system-ui, sans-serif;
 }
@@ -101,7 +156,7 @@
   }
 
   body {
-    background-color: var(--paper);
+    background-color: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 1.125rem;
@@ -112,7 +167,7 @@
   h1,
   h2,
   h3 {
-    color: var(--brand);
+    color: var(--ink);
     font-family: var(--font-brand);
     line-height: 1.15;
     text-wrap: balance;
@@ -132,18 +187,18 @@
   }
 
   :focus-visible {
-    outline: 3px solid var(--trust);
+    outline: 3px solid var(--focus);
     outline-offset: 3px;
   }
 
   ::selection {
-    background: var(--trust-soft);
+    background: var(--surface-2);
   }
 }
 
 @layer components {
   .link {
-    color: var(--trust);
+    color: var(--link);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -174,8 +229,8 @@
     gap: 0.5rem;
     border: 2px solid transparent;
     border-radius: 999px;
-    background-color: var(--cta);
-    color: var(--on-cta);
+    background-color: var(--accent);
+    color: var(--on-accent);
     padding: 0.7rem 1.4rem;
     font-family: var(--font-brand);
     font-size: 0.95rem;
@@ -191,13 +246,13 @@
   }
 
   .button-quiet {
-    border-color: var(--trust);
+    border-color: var(--link);
     background-color: transparent;
-    color: var(--trust);
+    color: var(--link);
   }
 
   .button-quiet:hover {
-    background-color: var(--trust-soft);
+    background-color: var(--surface-2);
     filter: none;
   }
 
@@ -205,8 +260,9 @@
     box-shadow: var(--shadow-soft);
   }
 
+  .bg-brand :focus-visible,
   .bg-footer :focus-visible {
-    outline-color: var(--footer-ink);
+    outline-color: var(--accent);
   }
 
   .skip-link {
@@ -215,7 +271,7 @@
     top: -4rem;
     z-index: 50;
     border-radius: 6px;
-    background-color: var(--panel);
+    background-color: var(--surface);
     color: var(--ink);
     padding: 0.75rem 1rem;
     font-weight: 700;
@@ -243,6 +299,28 @@
   animation: rise 520ms ease-out both;
 }
 
+.theme-icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme]) .theme-icon-moon {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -259,21 +337,37 @@
 }
 
 @media print {
-  :root {
-    --ink: #000000;
-    --ink-soft: #1a1a1a;
-    --paper: #ffffff;
-    --panel: #ffffff;
+  :root,
+  [data-theme="dark"] {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
     --line: #8a8a8a;
-    --trust: #000000;
-    --safe: #145c39;
+    --ink: #000000;
+    --muted: #1a1a1a;
+    --link: #000000;
+    --brand: #ffffff;
+    --on-brand: #000000;
+    --on-brand-soft: #1a1a1a;
+    --accent: #000000;
+    --on-accent: #ffffff;
+    --safe: #000000;
     --safe-soft: #ffffff;
-    --trust-soft: #ffffff;
-    --attention: #ffffff;
+    --attention-bg: #ffffff;
+    --attention-ink: #000000;
     --attention-line: #8a8a8a;
-    --brand: #000000;
+    --focus: #000000;
+    --trust-soft: #ffffff;
     --hero: #ffffff;
     --mist: #ffffff;
+    --tint-lavender: #ffffff;
+    --tint-yellow: #ffffff;
+    --tint-mint: #ffffff;
+    --tint-blue: #ffffff;
+    --tint-peach: #ffffff;
+    --tint-pink: #ffffff;
+    --shadow-soft: none;
   }
 
   @page {
@@ -281,8 +375,8 @@
   }
 
   body {
-    background: #ffffff;
-    color: #000000;
+    background: var(--bg);
+    color: var(--ink);
     font-size: 11pt;
   }
 
@@ -318,6 +412,6 @@
 
   .link,
   a {
-    color: #000000;
+    color: var(--ink);
   }
 }
