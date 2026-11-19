@@ -79,13 +79,13 @@ export function SiteFooter() {
               </div>
             </section>
           </div>
-        </div>
 
-        <div className="mt-10 w-full border-t border-on-brand/20 py-6">
-          <p className="text-center text-sm text-footer-soft">
-            © {year} Guia Seguro. Todos os direitos reservados. | Desenvolvido por{" "}
-            {footerContent.developer}.
-          </p>
+          <div className="col-span-full mt-10 w-full border-t border-on-brand/20 py-6">
+            <p className="w-full max-w-none text-center text-sm text-footer-soft">
+              © {year} Guia Seguro. Todos os direitos reservados. | Desenvolvido por{" "}
+              {footerContent.developer}.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

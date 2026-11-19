@@ -1,11 +1,8 @@
 import { goldenRules } from "@/content/rules";
-import { sectionLabels } from "@/content/sections";
-import { SectionLabel } from "./SectionLabel";
 
 export function GoldenRules() {
   return (
     <section aria-labelledby="regras-de-ouro" className="mt-20 sm:mt-24">
-      <SectionLabel>{sectionLabels.rules}</SectionLabel>
       <h2 id="regras-de-ouro" className="text-2xl font-bold sm:text-3xl">
         Três regras de ouro
       </h2>

@@ -44,6 +44,7 @@ export function HeroIllustration() {
   const timers = useRef<number[]>([]);
   const playingRef = useRef(false);
   const touchingRef = useRef(false);
+  const orbitRef = useRef<HTMLDivElement>(null);
 
   function clearTimers() {
     timers.current.forEach((timer) => window.clearTimeout(timer));
@@ -94,6 +95,21 @@ export function HeroIllustration() {
     };
   }, []);
 
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "development" || !orbitRef.current) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const style = window.getComputedStyle(orbitRef.current);
+
+    console.info("[Guia Seguro] Estado da órbita do herói", {
+      prefersReducedMotion: reduced,
+      animationName: style.animationName,
+      animationDuration: style.animationDuration,
+      animationIterationCount: style.animationIterationCount,
+      animationPlayState: style.animationPlayState,
+    });
+  }, []);
+
   function togglePaused() {
     setPaused((current) => {
       const next = !current;
@@ -120,7 +136,7 @@ export function HeroIllustration() {
       onTouchCancel={handleTouchEnd}
     >
       <div className="relative aspect-square w-full">
-        <div className="hero-orbit absolute inset-0">
+        <div ref={orbitRef} className="hero-orbit absolute inset-0">
           <span
             aria-hidden="true"
             className="absolute inset-[10%] rounded-full border border-line/70"

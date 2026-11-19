@@ -1,7 +1,5 @@
 import { kit } from "@/content/kit";
-import { sectionLabels } from "@/content/sections";
 import { CheckIcon } from "./icons";
-import { SectionLabel } from "./SectionLabel";
 
 export function StarterKit() {
   return (
@@ -9,7 +7,6 @@ export function StarterKit() {
       <div className="rounded-3xl bg-brand px-6 py-8 text-on-brand sm:px-8 sm:py-10">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-14">
           <div>
-            <SectionLabel onBrand>{sectionLabels.kit}</SectionLabel>
             <h2 id="kit-titulo" className="text-2xl font-bold text-on-brand sm:text-3xl">
               {kit.title}
             </h2>
