@@ -1,5 +1,5 @@
 export const studentsPage = {
-  title: "Para os alunos",
+  title: "Para jovens",
   lines: [
     "O código que chega no seu celular é só seu. Não passe para ninguém.",
     "Use uma senha diferente em cada conta importante e ative a verificação em duas etapas.",

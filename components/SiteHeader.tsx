@@ -5,7 +5,7 @@ const links = [
   { href: "/#temas", label: "Temas" },
   { href: "/se-algo-deu-errado/", label: "Se algo deu errado" },
   { href: "/conversar-e-ensinar/", label: "Conversar e ensinar" },
-  { href: "/para-os-alunos/", label: "Para os alunos" },
+  { href: "/para-jovens/", label: "Para jovens" },
   { href: "/sobre/", label: "Sobre" },
 ];
 

@@ -40,7 +40,7 @@ export const topics: Topic[] = [
   {
     slug: "dinheiro-a-receber",
     title: "Dinheiro a receber? Confirme antes de pagar qualquer coisa",
-    summary: "Um golpe que usa o interesse de professores em restituições e precatórios.",
+    summary: "Um golpe que promete restituições e precatórios e já atingiu professores.",
     goodNews:
       "A regra é simples e vale sempre: quem tem dinheiro a receber não precisa pagar nada antes.",
     howItWorks:
@@ -244,15 +244,16 @@ export const topics: Topic[] = [
   {
     slug: "dados-de-terceiros",
     title: "Dados e fotos de outras pessoas",
+    // [VERIFICAR] confirmar com a coordenação as regras sobre fotos de alunos, porque as fontes divergem
     notice:
-      "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte a coordenação ou as regras da sua escola. [VERIFICAR] este tema com a coordenadora antes de publicar, porque as fontes divergem em alguns pontos.",
+      "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte as regras da sua instituição ou um profissional da área.",
     summary:
       "Como cuidar da privacidade de quem você conhece, de alunos a familiares e colegas.",
     goodNews: "Um hábito resolve a maior parte: perguntar antes de postar e usar o canal certo.",
     howItWorks:
       "Fotos, contatos, conversas e documentos de outras pessoas ficam guardados no seu celular e no seu computador. Compartilhar sem cuidado pode expor quem confiou em você. Com crianças e adolescentes, o cuidado é maior: a LGPD (art. 14) pede que os dados deles sejam tratados no melhor interesse deles, e o ECA Digital (Lei 15.211/2025), em vigor desde 17/03/2026, reforça isso.",
     whatYouMightSee: [
-      "Foto de aluno em perfil pessoal, grupos de WhatsApp sem regras, arquivos de alunos em pendrive ou no computador da família.",
+      "Fotos de crianças e adolescentes em perfil pessoal, grupos de WhatsApp sem regras, arquivos de crianças e adolescentes em pendrive ou no computador da família.",
     ],
     whatToDo: [
       {
@@ -260,7 +261,7 @@ export const topics: Topic[] = [
           "Pergunte antes de postar foto, nome ou conversa de outra pessoa.",
           "Foto de criança ou adolescente só com autorização específica dos responsáveis, para uma finalidade e um canal definidos.",
           "Prefira fotos coletivas e evite marcar, nomear ou geolocalizar.",
-          "Na escola, use os canais oficiais e moderados nos grupos de WhatsApp e evite publicar fotos de alunos em perfil pessoal.",
+          "Em escolas, trabalho e outras instituições, use os canais oficiais e moderados nos grupos de WhatsApp e evite publicar fotos de crianças e adolescentes em perfil pessoal.",
           "Guarde arquivos de terceiros (notas, laudos, documentos) em local protegido por senha, e não em pendrive solto ou computador compartilhado.",
         ],
       },

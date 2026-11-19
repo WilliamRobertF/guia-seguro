@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | Guia Seguro",
   },
   description:
-    "Orientações de segurança digital para professores, sem complicação. Hábitos simples para proteger contas, dinheiro e dados.",
+    "Orientações de segurança digital para quem usa celular e computador, sem complicação. Hábitos simples para proteger contas, dinheiro e dados.",
   applicationName: "Guia Seguro",
   openGraph: {
     type: "website",

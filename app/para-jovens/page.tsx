@@ -5,9 +5,9 @@ import { studentsPage } from "@/content/students";
 import { formatDate } from "@/lib/date";
 
 export const metadata: Metadata = {
-  title: "Para os alunos",
-  description: "Seis frases curtas sobre segurança digital para repassar aos alunos.",
-  alternates: { canonical: "/para-os-alunos/" },
+  title: "Para jovens",
+  description: "Seis frases curtas sobre segurança digital para repassar aos jovens.",
+  alternates: { canonical: "/para-jovens/" },
 };
 
 export default function StudentsPage() {
