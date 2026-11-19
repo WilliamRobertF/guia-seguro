@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { GoldenRules } from "@/components/GoldenRules";
 import { HeroIllustration } from "@/components/HeroIllustration";
-import { LinkStatus } from "@/components/LinkStatus";
+import { SmoothAnchor } from "@/components/SmoothAnchor";
 import { StarterKit } from "@/components/StarterKit";
 import { TopicList } from "@/components/TopicList";
 import { homeText } from "@/content/rules";
@@ -31,14 +30,12 @@ export default function HomePage() {
               {homeText.reassurance}
             </p>
             <div className="no-print mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="#temas" className="button w-full sm:w-auto">
+              <SmoothAnchor href="#temas" className="button w-full sm:w-auto">
                 Ver os temas
-                <LinkStatus />
-              </Link>
-              <Link href="#kit" className="button button-quiet w-full sm:w-auto">
+              </SmoothAnchor>
+              <SmoothAnchor href="#comecar" className="button button-quiet w-full sm:w-auto">
                 Começar por aqui
-                <LinkStatus />
-              </Link>
+              </SmoothAnchor>
             </div>
           </div>
           <div>

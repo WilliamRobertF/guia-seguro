@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SmoothAnchor } from "./SmoothAnchor";
 
 export type PageIndexItem = {
   id: string;
@@ -65,13 +66,13 @@ export function PageIndex({ items }: { items: PageIndexItem[] }) {
           <ul className="space-y-1">
             {items.map((item) => (
               <li key={item.id}>
-                <a
+                <SmoothAnchor
                   href={`#${item.id}`}
                   className={linkClass(item.id)}
                   aria-current={activeId === item.id ? "location" : undefined}
                 >
                   {item.label}
-                </a>
+                </SmoothAnchor>
               </li>
             ))}
           </ul>
@@ -89,13 +90,13 @@ export function PageIndex({ items }: { items: PageIndexItem[] }) {
           <ul className="space-y-1">
             {items.map((item) => (
               <li key={item.id}>
-                <a
+                <SmoothAnchor
                   href={`#${item.id}`}
                   className={linkClass(item.id)}
                   aria-current={activeId === item.id ? "location" : undefined}
                 >
                   {item.label}
-                </a>
+                </SmoothAnchor>
               </li>
             ))}
           </ul>

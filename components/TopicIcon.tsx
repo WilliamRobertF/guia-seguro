@@ -23,6 +23,7 @@ const iconSizes = {
   sm: "size-12",
   md: "size-14",
   lg: "size-16",
+  card: "size-[5.5rem]",
 } as const;
 
 const iconPixels = {
@@ -30,6 +31,7 @@ const iconPixels = {
   sm: 22,
   md: 24,
   lg: 28,
+  card: 40,
 } as const;
 
 type TopicIconSize = keyof typeof iconSizes;

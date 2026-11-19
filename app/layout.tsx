@@ -4,6 +4,7 @@ import "./globals.css";
 import { BackToTop } from "@/components/BackToTop";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SmoothAnchor } from "@/components/SmoothAnchor";
 
 const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
@@ -75,9 +76,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-full flex-col">
-        <a href="#conteudo" className="skip-link">
+        <SmoothAnchor href="#conteudo" className="skip-link">
           Ir para o conteúdo
-        </a>
+        </SmoothAnchor>
         <BackToTop />
         <SiteHeader />
         <div className="flex-1">{children}</div>

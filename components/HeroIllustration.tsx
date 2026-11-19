@@ -35,7 +35,7 @@ function PauseIcon({ paused }: { paused: boolean }) {
 }
 
 const pillBase =
-  "rounded-full px-2.5 py-1 text-sm font-bold transition-colors duration-150";
+  "rounded-full border border-line px-2.5 py-1 text-sm font-bold";
 
 export function HeroIllustration() {
   const [playing, setPlaying] = useState(false);
@@ -43,6 +43,7 @@ export function HeroIllustration() {
   const [phase, setPhase] = useState<Phase>("idle");
   const timers = useRef<number[]>([]);
   const playingRef = useRef(false);
+  const touchingRef = useRef(false);
 
   function clearTimers() {
     timers.current.forEach((timer) => window.clearTimeout(timer));
@@ -56,8 +57,9 @@ export function HeroIllustration() {
     setPhase("idle");
   }
 
-  function startSequence() {
+  function startSequence(fromTouch = false) {
     if (paused || playingRef.current) return;
+    if (touchingRef.current && !fromTouch) return;
 
     clearTimers();
     playingRef.current = true;
@@ -65,14 +67,24 @@ export function HeroIllustration() {
     setPhase("pare");
 
     timers.current = [
-      window.setTimeout(() => setPhase("respire"), 1500),
-      window.setTimeout(() => setPhase("confirme"), 5500),
+      window.setTimeout(() => setPhase("respire"), 1600),
+      window.setTimeout(() => setPhase("confirme"), 5600),
       window.setTimeout(() => {
         playingRef.current = false;
         setPlaying(false);
         setPhase("idle");
-      }, 7000),
+      }, 7200),
     ];
+  }
+
+  function handleTouchStart() {
+    if (touchingRef.current) return;
+    touchingRef.current = true;
+    startSequence(true);
+  }
+
+  function handleTouchEnd() {
+    touchingRef.current = false;
   }
 
   useEffect(() => {
@@ -95,8 +107,17 @@ export function HeroIllustration() {
       className={`hero-illustration mx-auto w-full max-w-[28rem] select-none ${
         playing ? "is-playing" : ""
       } ${paused ? "is-paused" : ""}`}
-      onMouseEnter={startSequence}
+      onMouseEnter={() => startSequence()}
       onMouseLeave={resetSequence}
+      onFocus={() => startSequence()}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          resetSequence();
+        }
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
     >
       <div className="relative aspect-square w-full">
         <div className="hero-orbit absolute inset-0">
@@ -143,12 +164,8 @@ export function HeroIllustration() {
 
         <div
           aria-hidden="true"
-          onClick={() => {
-            if (window.matchMedia("(hover: none)").matches) startSequence();
-          }}
           className="hero-center absolute left-1/2 top-1/2 z-10 flex w-[54%] -translate-x-1/2 -translate-y-1/2 flex-col items-center"
         >
-          <span className="hero-breathe-ring pointer-events-none absolute inset-[-0.75rem] rounded-[2rem] border border-brand/20 opacity-0" />
           <div className="hero-bubble relative w-full rounded-3xl border border-line bg-surface px-4 py-4 text-center shadow-soft">
             <span className="hero-check absolute right-2 top-2 flex size-9 items-center justify-center rounded-full bg-accent text-on-accent">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -177,7 +194,7 @@ export function HeroIllustration() {
               Pare
             </span>
             <span
-              className={`hero-tag ${pillBase} ${
+              className={`hero-tag hero-tag-respire ${pillBase} ${
                 phase === "respire" ? "is-active" : "bg-surface-2 text-ink"
               }`}
             >
@@ -185,7 +202,7 @@ export function HeroIllustration() {
             </span>
             <span
               className={`hero-tag inline-flex items-center gap-1 ${pillBase} ${
-                phase === "confirme" ? "is-active" : "bg-accent text-on-accent"
+                phase === "confirme" ? "is-active" : "bg-surface-2 text-ink"
               }`}
             >
               Confirme

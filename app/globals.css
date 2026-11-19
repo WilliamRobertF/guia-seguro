@@ -524,24 +524,85 @@ details[open] .menu-panel {
     outline-color: var(--accent);
   }
 
-  .topic-row:focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: -3px;
+  .topic-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
   }
 
-  .topic-arrow {
-    transition: translate 150ms ease;
+  .topic-card {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    min-width: 0;
+    cursor: pointer;
+    border-radius: 28px;
+    background-color: var(--surface-2);
+    padding: 1.75rem;
+    color: var(--ink);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 400ms ease;
   }
 
-  .topic-row:hover .topic-arrow,
-  .topic-row:focus-visible .topic-arrow {
-    translate: 4px 0;
+  .topic-card-move {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 400ms ease;
   }
 
-  .topic-row:hover .topic-icon,
-  .topic-row:focus-visible .topic-icon {
-    background-color: var(--tc-fg);
-    color: var(--bg);
+  .topic-card:hover,
+  .topic-card:focus-visible {
+    background-color: color-mix(in srgb, var(--tc-bg) 60%, var(--surface));
+  }
+
+  .topic-card:hover .topic-card-move,
+  .topic-card:focus-visible .topic-card-move {
+    transform: translateY(-6px);
+  }
+
+  .topic-card-cta {
+    display: inline-flex;
+    min-height: 44px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    border-radius: 999px;
+    background-color: var(--accent);
+    padding: 0.6rem 1.25rem;
+    color: var(--on-accent);
+    font-family: var(--font-brand);
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  [data-theme="dark"] .topic-card:hover,
+  [data-theme="dark"] .topic-card:focus-visible {
+    background-color: var(--tc-bg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .topic-card:hover,
+    :root:not([data-theme]) .topic-card:focus-visible {
+      background-color: var(--tc-bg);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .topic-card {
+      flex-basis: calc(50% - 0.75rem);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .topic-card {
+      flex-basis: calc(25% - 1.125rem);
+    }
   }
 
   .hero-orbit {
@@ -554,8 +615,6 @@ details[open] .menu-panel {
     transform-origin: center;
   }
 
-  .hero-bubble,
-  .hero-breathe-ring,
   .hero-check {
     transform-origin: center;
   }
@@ -565,9 +624,19 @@ details[open] .menu-panel {
     stroke-dashoffset: 0;
   }
 
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    transition:
+      background-color 300ms var(--ease),
+      color 300ms var(--ease);
+  }
+
   .hero-tag.is-active {
-    background-color: var(--brand);
-    color: var(--on-brand);
+    background-color: var(--accent);
+    color: var(--on-accent);
   }
 
   .hero-illustration:hover .hero-orbit,
@@ -581,24 +650,18 @@ details[open] .menu-panel {
     animation-play-state: paused;
   }
 
-  .hero-illustration.is-playing .hero-bubble {
-    animation: hero-breathe 4s ease-in-out 1.5s 1 both;
-  }
-
-  .hero-illustration.is-playing .hero-breathe-ring {
-    animation: hero-breathe-ring 4s ease-out 1.5s 1 both;
-  }
-
-  .hero-illustration.is-playing .hero-check-path {
-    animation: hero-check-draw 550ms ease-out 5.5s 1 both;
+  .hero-illustration.is-playing .hero-tag-respire {
+    animation: hero-tag-breathe 4s ease-in-out 1.6s 1 both;
   }
 
   .hero-illustration.is-playing .hero-check {
-    animation: hero-check-pop 350ms ease-out 5.95s 1 both;
+    animation: hero-check-grow 700ms ease-in-out 5.6s 1 both;
   }
 
-  .hero-illustration.is-paused .hero-bubble,
-  .hero-illustration.is-paused .hero-breathe-ring,
+  .hero-illustration.is-playing .hero-check-path {
+    animation: hero-check-draw 550ms ease-out 5.6s 1 both;
+  }
+
   .hero-illustration.is-paused .hero-check,
   .hero-illustration.is-paused .hero-check-path {
     animation-play-state: paused;
@@ -639,24 +702,23 @@ details[open] .menu-panel {
   }
 }
 
-@keyframes hero-breathe {
+@keyframes hero-tag-breathe {
   0%,
   100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.04);
+    transform: scale(1.18);
   }
 }
 
-@keyframes hero-breathe-ring {
-  0% {
-    opacity: 0.35;
+@keyframes hero-check-grow {
+  0%,
+  100% {
     transform: scale(1);
   }
-  100% {
-    opacity: 0;
-    transform: scale(1.16);
+  50% {
+    transform: scale(1.4);
   }
 }
 
@@ -666,16 +728,6 @@ details[open] .menu-panel {
   }
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes hero-check-pop {
-  0% {
-    transform: scale(1.15);
-  }
-  60%,
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -762,32 +814,27 @@ details[open] .menu-panel {
     transform: none;
   }
 
-  .topic-arrow {
+  .topic-card,
+  .topic-card-move {
     transition: none;
   }
 
-  .topic-row:hover .topic-arrow,
-  .topic-row:focus-visible .topic-arrow {
-    translate: none;
+  .topic-card:hover .topic-card-move,
+  .topic-card:focus-visible .topic-card-move {
+    transform: none;
   }
 
   .hero-orbit,
   .hero-card,
-  .hero-bubble,
-  .hero-breathe-ring,
+  .hero-tag-respire,
   .hero-check,
   .hero-check-path {
     animation: none !important;
   }
 
-  .hero-bubble,
-  .hero-breathe-ring,
+  .hero-tag-respire,
   .hero-check {
     transform: none !important;
-  }
-
-  .hero-breathe-ring {
-    opacity: 0 !important;
   }
 
   .hero-check-path {
