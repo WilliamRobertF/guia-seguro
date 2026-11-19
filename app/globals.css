@@ -147,6 +147,18 @@
   --tc-fg: #a8305f;
 }
 
+[data-topic] {
+  --tc-hover-bg: var(--tc-bg);
+}
+
+[data-topic="whatsapp-e-codigos"] {
+  --tc-hover-bg: color-mix(in srgb, var(--tc-fg) 8%, var(--tc-bg));
+}
+
+[data-topic="dinheiro-a-receber"] {
+  --tc-hover-bg: color-mix(in srgb, var(--tc-fg) 4%, var(--tc-bg));
+}
+
 [data-theme="dark"] [data-topic] {
   --tc-bg: color-mix(in srgb, var(--tc-fg) 16%, var(--surface));
 }
@@ -537,16 +549,18 @@ details[open] .menu-panel {
     flex-direction: column;
     min-width: 0;
     cursor: pointer;
-    border: 1px solid var(--line);
     border-radius: 28px;
     background-color: var(--surface);
     padding: 1.75rem;
     color: var(--ink);
     text-align: center;
     text-decoration: none;
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
+      0 10px 28px -14px color-mix(in srgb, var(--ink) 22%, transparent);
     transition:
       background-color 400ms ease,
-      border-color 400ms ease,
+      box-shadow 400ms ease,
       transform 300ms ease;
   }
 
@@ -560,8 +574,10 @@ details[open] .menu-panel {
 
   .topic-card:hover,
   .topic-card:focus-visible {
-    background-color: var(--tc-bg);
-    border-color: color-mix(in srgb, var(--tc-fg) 35%, transparent);
+    background-color: var(--tc-hover-bg);
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
+      0 16px 32px -14px color-mix(in srgb, var(--tc-fg) 35%, transparent);
   }
 
   .topic-card:hover .topic-card-move,
@@ -588,21 +604,45 @@ details[open] .menu-panel {
 
   [data-theme="dark"] .topic-card {
     background-color: var(--surface-2);
+    box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
   }
 
   [data-theme="dark"] .topic-card:hover,
   [data-theme="dark"] .topic-card:focus-visible {
     background-color: color-mix(in srgb, var(--tc-fg) 22%, var(--surface-2));
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
+      0 16px 32px -14px color-mix(in srgb, var(--tc-fg) 35%, transparent);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) .topic-card {
       background-color: var(--surface-2);
+      box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
     }
 
     :root:not([data-theme]) .topic-card:hover,
     :root:not([data-theme]) .topic-card:focus-visible {
       background-color: color-mix(in srgb, var(--tc-fg) 22%, var(--surface-2));
+      box-shadow:
+        0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
+        0 16px 32px -14px color-mix(in srgb, var(--tc-fg) 35%, transparent);
+    }
+  }
+
+  .soft-panel {
+    box-shadow:
+      0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
+      0 10px 28px -14px color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+
+  [data-theme="dark"] .soft-panel {
+    box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .soft-panel {
+      box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
     }
   }
 
@@ -713,56 +753,73 @@ details[open] .menu-panel {
     transform-origin: center;
   }
 
-  .hero-check {
-    transform-origin: center;
-  }
-
-  .hero-check-path {
-    stroke-dasharray: 24;
-    stroke-dashoffset: 0;
-  }
-
   .hero-tag {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--surface-2);
+    color: var(--ink);
     transform-origin: center;
     transition:
       background-color 300ms var(--ease),
       color 300ms var(--ease);
   }
 
-  .hero-tag.is-active {
+  .hero-tag-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+  }
+
+  .hero-illustration[data-step="pare"] .hero-tag-pare,
+  .hero-illustration[data-step="respire"] .hero-tag-respire,
+  .hero-illustration[data-step="confirme"] .hero-tag-confirme {
     background-color: var(--accent);
     color: var(--on-accent);
   }
 
-  .hero-illustration:hover .hero-orbit,
-  .hero-illustration:hover .hero-card,
-  .hero-illustration:focus-within .hero-orbit,
-  .hero-illustration:focus-within .hero-card,
-  .hero-illustration.is-playing .hero-orbit,
-  .hero-illustration.is-playing .hero-card,
-  .hero-illustration.is-paused .hero-orbit,
-  .hero-illustration.is-paused .hero-card {
+  .hero-illustration[data-step="respire"] .hero-tag-respire {
+    animation: hero-tag-breathe 4s ease-in-out 1 both;
+  }
+
+  .hero-illustration[data-step="confirme"] .hero-tag-check {
+    animation: hero-check-grow 700ms ease-in-out 1 both;
+  }
+
+  .hero-illustration.is-orbit-paused .hero-orbit,
+  .hero-illustration.is-orbit-paused .hero-card {
     animation-play-state: paused;
   }
 
-  .hero-illustration.is-playing .hero-tag-respire {
-    animation: hero-tag-breathe 4s ease-in-out 1.6s 1 both;
+  .hero-legend {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    height: 2rem;
+    margin: 1rem auto 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0 0.75rem;
+    background-color: transparent;
+    color: var(--tc-fg);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 150ms var(--ease),
+      background-color 150ms var(--ease),
+      color 150ms var(--ease);
   }
 
-  .hero-illustration.is-playing .hero-check {
-    animation: hero-check-grow 700ms ease-in-out 5.6s 1 both;
-  }
-
-  .hero-illustration.is-playing .hero-check-path {
-    animation: hero-check-draw 550ms ease-out 5.6s 1 both;
-  }
-
-  .hero-illustration.is-paused .hero-check,
-  .hero-illustration.is-paused .hero-check-path {
-    animation-play-state: paused;
+  .hero-legend[data-topic] {
+    background-color: var(--tc-bg);
+    opacity: 1;
   }
 
   .skip-link {
@@ -817,15 +874,6 @@ details[open] .menu-panel {
   }
   50% {
     transform: scale(1.4);
-  }
-}
-
-@keyframes hero-check-draw {
-  from {
-    stroke-dashoffset: 24;
-  }
-  to {
-    stroke-dashoffset: 0;
   }
 }
 
@@ -930,18 +978,13 @@ details[open] .menu-panel {
   .hero-orbit,
   .hero-card,
   .hero-tag-respire,
-  .hero-check,
-  .hero-check-path {
+  .hero-tag-check {
     animation: none !important;
   }
 
   .hero-tag-respire,
-  .hero-check {
+  .hero-tag-check {
     transform: none !important;
-  }
-
-  .hero-check-path {
-    stroke-dashoffset: 0 !important;
   }
 }
 

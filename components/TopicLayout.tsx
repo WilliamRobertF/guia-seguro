@@ -148,7 +148,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
           className="mt-16 scroll-mt-6"
           tabIndex={-1}
         >
-          <div className="rounded-2xl border border-line bg-surface px-5 py-6">
+          <div className="soft-panel rounded-2xl bg-surface px-5 py-6">
             <h2
               id="deu-errado-titulo"
               className="text-2xl font-bold sm:text-[1.75rem]"
