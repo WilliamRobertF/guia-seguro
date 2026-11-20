@@ -7,7 +7,6 @@ export const aboutPage = {
   privacy:
     "Este site não usa cookies e não coleta dados. Se você escolher o tema claro ou escuro, a escolha fica guardada só no seu navegador.",
   credits:
-    "Parte do conteúdo se baseia na Cartilha de Segurança para Internet, do CERT.br/NIC.br. [VERIFICAR] os termos de crédito em cartilha.cert.br/cc.",
-  author: "Autor e contato institucional: [VERIFICAR].",
+    "As orientações se baseiam em materiais públicos, como a Cartilha de Segurança para Internet (CERT.br e NIC.br, cartilha.cert.br). Os textos deste site são originais.",
   reviewedAt: "2026-11-18",
 };

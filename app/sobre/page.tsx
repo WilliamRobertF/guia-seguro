@@ -64,7 +64,6 @@ export default function AboutPage() {
           Créditos
         </h2>
         <p className="mt-4">{aboutPage.credits}</p>
-        <p className="mt-4">{aboutPage.author}</p>
       </section>
 
       <p className="mt-10">

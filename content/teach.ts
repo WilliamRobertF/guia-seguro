@@ -13,7 +13,7 @@ export const teachPage = {
         "Deixe claro que a criança pode contar uma experiência ruim sem levar bronca. O guia do CERT.br pede que pais e responsáveis estimulem os filhos a compartilhar essas experiências.",
         "Controle parental é um complemento ao diálogo, não um substituto.",
         "O portal Internet Segura (CERT.br e NIC.br) tem guias gratuitos para crianças de 8 a 12 anos, para pais e responsáveis, para adolescentes (Internet com Responsa) e para educadores.",
-        "Para denunciar ou pedir orientação: SaferNet Brasil e Disque 100. [VERIFICAR] os canais atuais.",
+        "Para denunciar ou pedir orientação: SaferNet Brasil e Disque 100.",
       ],
     },
     {

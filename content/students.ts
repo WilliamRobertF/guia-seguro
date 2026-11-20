@@ -8,6 +8,5 @@ export const studentsPage = {
     "Suas fotos e seus dados são seus. Pense antes de postar, e peça licença antes de postar os dos outros.",
     "Se algo parecer estranho ou deixar você desconfortável, conte para um adulto de confiança. Você não vai levar bronca por pedir ajuda.",
   ],
-  warning: "Texto para revisão da coordenação antes de publicar. [VERIFICAR]",
   reviewedAt: "2026-11-18",
 };

@@ -41,7 +41,7 @@ export default function WrongPage() {
 
       <footer className="mt-16 border-t border-line pt-8">
         <p className="text-[1.0625rem] text-ink-soft">
-          Revisado em {formatDate(wrongPage.reviewedAt)}.
+          Atualizado em {formatDate(wrongPage.reviewedAt)}.
         </p>
         <SourceList sources={wrongPage.sources} />
       </footer>

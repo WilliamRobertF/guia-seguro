@@ -6,13 +6,13 @@ export const wrongPage = {
     "Respire. Isso acontece com muita gente, inclusive com quem entende de tecnologia. Golpistas usam técnicas pensadas para enganar, e cair não é falta de inteligência. O importante é agir com calma e na ordem abaixo.",
   steps: [
     "Pare de responder e não envie mais dinheiro nem códigos.",
-    "Ligue para o banco pelo número do verso do cartão e peça para contestar a transação. [VERIFICAR] o procedimento atual para Pix.",
+    "Avise o seu banco pelo aplicativo ou pelo número oficial e peça para contestar a transação. No Pix, procure \"Contestar esta transação\" no extrato ou na seção Pix (o nome pode variar de banco para banco): isso aciona o Mecanismo Especial de Devolução, do Banco Central, e vale por até 80 dias. Quanto antes, maior a chance de o dinheiro ainda estar na conta de destino. A devolução depende de o banco confirmar a fraude e de haver saldo, então não é garantida.",
     "Troque as senhas, começando pelo e-mail principal, e ative a verificação em duas etapas.",
     "Se o WhatsApp foi clonado, avise seus contatos por outro meio.",
     "Guarde as provas: conversas, áudios, números de telefone, links e comprovantes.",
     "Registre boletim de ocorrência.",
     "Se envolver dados ou fotos de alunos, avise a coordenação.",
-    "Se o celular foi roubado ou perdido, use o Celular Seguro.",
+    "Se o celular foi roubado ou perdido, registre a ocorrência no Celular Seguro pelo site ou peça a uma pessoa de confiança cadastrada que faça pelo aplicativo.",
   ],
   closing:
     "Contar o que aconteceu para alguém de confiança ajuda você e ajuda os outros a não caírem.",

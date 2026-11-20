@@ -1,34 +1,60 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useEffect, useRef } from "react";
 
 type Theme = "light" | "dark";
 
-const listeners = new Set<() => void>();
-
-function subscribe(callback: () => void) {
-  listeners.add(callback);
-  return () => {
-    listeners.delete(callback);
-  };
-}
-
-function getSnapshot(): Theme {
+function currentTheme(): Theme {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
-}
-
-function getServerSnapshot(): Theme {
-  return "light";
 }
 
 function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
-  listeners.forEach((listener) => listener());
+}
+
+function MoonIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
+    </svg>
+  );
+}
+
+function SunIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4" />
+    </svg>
+  );
 }
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const animationTimer = useRef<number | null>(null);
+  const lightButton = useRef<HTMLButtonElement>(null);
+  const darkButton = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     return () => {
@@ -38,9 +64,7 @@ export function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    const current: Theme =
-      document.documentElement.dataset.theme === "dark" ? "dark" : "light";
-    const next: Theme = current === "dark" ? "light" : "dark";
+    const next: Theme = currentTheme() === "dark" ? "light" : "dark";
     const root = document.documentElement;
 
     root.classList.add("theme-anim");
@@ -54,53 +78,38 @@ export function ThemeToggle() {
       // Sem armazenamento disponível, o tema ainda troca nesta visita.
     }
 
+    window.requestAnimationFrame(() => {
+      (next === "dark" ? darkButton : lightButton).current?.focus();
+    });
+
     animationTimer.current = window.setTimeout(() => {
       root.classList.remove("theme-anim");
       animationTimer.current = null;
     }, 350);
   }
 
-  const label = theme === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro";
-
   return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      aria-label={label}
-      title={label}
-      className="no-print relative inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand hover:border-accent hover:text-accent active:border-accent active:text-accent"
-    >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-        focusable="false"
-        className="theme-icon-moon"
+    <span className="inline-flex">
+      <button
+        ref={lightButton}
+        type="button"
+        onClick={toggleTheme}
+        aria-label="Mudar para tema escuro"
+        title="Mudar para tema escuro"
+        className="theme-toggle-light no-print relative inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand hover:border-accent hover:text-accent active:border-accent active:text-accent"
       >
-        <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
-      </svg>
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-        focusable="false"
-        className="theme-icon-sun"
+        <MoonIcon />
+      </button>
+      <button
+        ref={darkButton}
+        type="button"
+        onClick={toggleTheme}
+        aria-label="Mudar para tema claro"
+        title="Mudar para tema claro"
+        className="theme-toggle-dark no-print relative inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-on-brand/40 text-on-brand hover:border-accent hover:text-accent active:border-accent active:text-accent"
       >
-        <circle cx="12" cy="12" r="4" />
-        <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4" />
-      </svg>
-    </button>
+        <SunIcon />
+      </button>
+    </span>
   );
 }

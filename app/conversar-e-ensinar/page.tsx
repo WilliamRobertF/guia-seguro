@@ -61,7 +61,7 @@ export default function TeachPage() {
 
       <footer className="mt-16 border-t border-line pt-8">
         <p className="text-[1.0625rem] text-ink-soft">
-          Revisado em {formatDate(teachPage.reviewedAt)}.
+          Atualizado em {formatDate(teachPage.reviewedAt)}.
         </p>
         <SourceList sources={teachPage.sources} />
       </footer>

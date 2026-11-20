@@ -20,7 +20,7 @@ export const topics: Topic[] = [
         items: [
           "O código de verificação é só seu. Não passe para ninguém, em nenhuma situação.",
           "Antes de qualquer Pix, ligue para a pessoa no número que você já tinha.",
-          "Ative a confirmação em duas etapas do WhatsApp. O caminho costuma ser Configurações, Conta, Confirmação em duas etapas. [VERIFICAR] os nomes dos menus no aplicativo atual.",
+          "Ative a confirmação em duas etapas do WhatsApp. Abra Configurações (no iPhone, Ajustes), toque em Conta, depois em Confirmação em duas etapas e em Ativar. Crie um PIN de seis dígitos e cadastre um e-mail para recuperá-lo se esquecer. Com o PIN, quem tentar cadastrar o seu número em outro aparelho não consegue entrar na conta.",
           "Desconfie de pressa. Quem precisa de ajuda de verdade aceita esperar você ligar.",
         ],
       },
@@ -221,12 +221,12 @@ export const topics: Topic[] = [
           "Faça backup automático dos arquivos importantes (provas, planejamentos, notas), com uma cópia fora do computador.",
           "Evite programas piratas e downloads de sites desconhecidos. Instale aplicativos só nas lojas oficiais e desconfie de permissões incoerentes: um aplicativo de jogo não precisa da sua lista de chamadas.",
           "Deixe senha de tela e biometria ativadas e não deixe o celular desbloqueado em locais públicos.",
-          "Celular Seguro (programa do Ministério da Justiça, login gov.br, celularseguro.mj.gov.br): permite bloquear a linha e o acesso a aplicativos de bancos e outros serviços após o alerta de roubo ou perda, e dá para cadastrar pessoas de confiança antes. Ele não rastreia o aparelho, então mantenha também o localizador nativo do Android ou do iPhone.",
+          "Cadastre o Celular Seguro, programa gratuito do Governo Federal (celularseguro.mj.gov.br ou aplicativo). Entre com a sua conta gov.br, toque em registrar telefone (o número precisa estar no seu CPF) e, se quiser, indique pessoas de confiança que poderão bloquear por você. Em caso de roubo, perda ou furto, você registra a ocorrência pelo site ou pelo aplicativo, e o programa bloqueia a linha e o acesso a aplicativos de bancos. Ele não rastreia o aparelho, então mantenha também o localizador do Android ou do iPhone.",
         ],
       },
     ],
     ifSomethingWentWrong: [
-      "Se o celular foi perdido ou roubado, use o Celular Seguro por outro aparelho, avise o banco e registre boletim de ocorrência. [VERIFICAR] o passo a passo atual no site oficial.",
+      "Registre a ocorrência no Celular Seguro pelo site (ou peça a uma pessoa de confiança cadastrada que faça pelo aplicativo), avise o banco e faça o boletim de ocorrência.",
     ],
     sources: [
       { label: "cartilha.cert.br", url: "https://cartilha.cert.br/guardiao/fasciculo-backup-egc.pdf" },
@@ -244,7 +244,6 @@ export const topics: Topic[] = [
   {
     slug: "dados-de-terceiros",
     title: "Dados e fotos de outras pessoas",
-    // [VERIFICAR] confirmar com a coordenação as regras sobre fotos de alunos, porque as fontes divergem
     notice:
       "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte as regras da sua instituição ou um profissional da área.",
     summary:
@@ -259,7 +258,7 @@ export const topics: Topic[] = [
       {
         items: [
           "Pergunte antes de postar foto, nome ou conversa de outra pessoa.",
-          "Foto de criança ou adolescente só com autorização específica dos responsáveis, para uma finalidade e um canal definidos.",
+          "Para fotos de crianças e adolescentes, o recomendado é ter autorização específica dos responsáveis, para uma finalidade e um canal definidos.",
           "Prefira fotos coletivas e evite marcar, nomear ou geolocalizar.",
           "Em escolas, trabalho e outras instituições, use os canais oficiais e moderados nos grupos de WhatsApp e evite publicar fotos de crianças e adolescentes em perfil pessoal.",
           "Guarde arquivos de terceiros (notas, laudos, documentos) em local protegido por senha, e não em pendrive solto ou computador compartilhado.",

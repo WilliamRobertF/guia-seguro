@@ -35,10 +35,6 @@ export default function StudentsPage() {
         </ul>
       </section>
 
-      <aside className="mt-10 rounded-2xl border border-attention-line bg-attention px-5 py-4 text-attention-ink">
-        <p>{studentsPage.warning}</p>
-      </aside>
-
       <p className="mt-10 flex flex-wrap gap-x-6 gap-y-2">
         <Link className="nav-link font-bold" href="/conversar-e-ensinar/">
           Como conversar em casa e na escola
@@ -50,7 +46,7 @@ export default function StudentsPage() {
 
       <footer className="mt-16 border-t border-line pt-8">
         <p className="text-[1.0625rem] text-ink-soft">
-          Revisado em {formatDate(studentsPage.reviewedAt)}.
+          Atualizado em {formatDate(studentsPage.reviewedAt)}.
         </p>
       </footer>
     </InternalPageLayout>
