@@ -48,7 +48,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
     <InternalPageLayout
       title={topic.title}
       subtitle={topic.summary}
-      icon={<TopicIcon slug={topic.slug} size="lg" />}
+      icon={<TopicIcon slug={topic.slug} size="header" />}
       indexItems={contents}
       breadcrumb={
         <nav aria-label="Você está aqui" className="no-print text-[1.0625rem]">
@@ -171,7 +171,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
 
       <footer className="mt-20 border-t border-line pt-8">
         <p className="text-[1.0625rem] text-ink-soft">
-          Revisado em {formatDate(topic.reviewedAt)}.
+          Atualizado em {formatDate(topic.reviewedAt)}.
         </p>
         <SourceList sources={topic.sources} />
 

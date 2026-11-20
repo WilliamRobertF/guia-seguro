@@ -22,10 +22,12 @@ export function InternalPageLayout({
     <main id="conteudo" className="shell-internal pb-16" tabIndex={-1}>
       <header className="max-w-[44rem] pt-10 sm:pt-14">
         {breadcrumb ? <div className="mb-5">{breadcrumb}</div> : null}
-        {icon ? <div className="mb-4">{icon}</div> : null}
-        <h1 className="text-[2.25rem] leading-[1.05] font-bold sm:text-[3rem]">
-          {title}
-        </h1>
+        <div className="flex items-center gap-4">
+          {icon ? <div className="shrink-0">{icon}</div> : null}
+          <h1 className="min-w-0 text-[2.25rem] leading-[1.05] font-bold sm:text-[3rem]">
+            {title}
+          </h1>
+        </div>
         {subtitle ? <p className="mt-5 text-xl text-muted">{subtitle}</p> : null}
       </header>
 

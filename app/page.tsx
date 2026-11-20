@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { GoldenRules } from "@/components/GoldenRules";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { SmoothAnchor } from "@/components/SmoothAnchor";
@@ -16,7 +17,7 @@ export default function HomePage() {
   return (
     <main id="conteudo" tabIndex={-1}>
       <section className="shell pt-10 pb-4 sm:pt-16 lg:pt-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,32rem)] lg:gap-14">
           <div>
             <h1 className="text-[2.9rem] leading-[1.02] font-bold tracking-tight sm:text-[4rem] lg:text-[4.5rem]">
               Pare.
@@ -48,6 +49,17 @@ export default function HomePage() {
         <GoldenRules />
         <StarterKit />
         <TopicList />
+        <nav aria-label="Outros assuntos" className="home-links">
+          <Link href="/se-algo-deu-errado/" className="home-link-button">
+            Aconteceu alguma coisa? Veja o que fazer
+          </Link>
+          <Link href="/conversar-e-ensinar/" className="home-link-button">
+            Quer ajudar alguém? Conversar e ensinar
+          </Link>
+          <Link href="/para-jovens/" className="home-link-button">
+            Para jovens
+          </Link>
+        </nav>
       </div>
     </main>
   );

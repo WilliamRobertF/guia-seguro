@@ -35,7 +35,7 @@ function PauseIcon({ paused }: { paused: boolean }) {
 }
 
 const pillBase =
-  "rounded-full border border-line px-2.5 py-1 text-sm font-bold";
+  "rounded-full border border-line";
 
 export function HeroIllustration() {
   const [step, setStep] = useState<Step>("idle");
@@ -92,7 +92,7 @@ export function HeroIllustration() {
 
   return (
     <div
-      className={`hero-illustration mx-auto w-full max-w-[28rem] select-none ${
+      className={`hero-illustration mx-auto w-full max-w-[32rem] select-none ${
         orbitPaused ? "is-orbit-paused" : ""
       }`}
       data-step={step}
@@ -150,7 +150,7 @@ export function HeroIllustration() {
             </p>
             <p className="mt-2 text-[13px] text-muted">Exemplo de mensagem de golpe</p>
           </div>
-          <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+          <div className="hero-tags mt-3">
             <span
               className={`hero-tag hero-tag-pare ${pillBase}`}
             >

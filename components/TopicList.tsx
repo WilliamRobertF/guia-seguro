@@ -74,13 +74,13 @@ export function TopicList() {
   const lastIndex = topics.length - 1;
 
   return (
-    <section id="temas" aria-labelledby="temas-titulo" className="mt-20 scroll-mt-6 sm:mt-24" tabIndex={-1}>
-      <h2 id="temas-titulo" className="text-2xl font-bold sm:text-3xl">
+    <section id="temas" aria-labelledby="temas-titulo" className="mt-20 sm:mt-24" tabIndex={-1}>
+      <h2 id="temas-titulo" className="sr-only">
         Temas
       </h2>
       <div
         ref={containerRef}
-        className="topic-cards mt-8"
+        className="topic-cards"
         tabIndex={0}
         role="region"
         aria-label="Temas"
