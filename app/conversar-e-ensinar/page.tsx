@@ -7,8 +7,7 @@ import { formatDate } from "@/lib/date";
 
 export const metadata: Metadata = {
   title: "Conversar e ensinar",
-  description:
-    "Como falar de segurança digital com crianças, adolescentes e idosos, e como espalhar bons hábitos.",
+  description: teachPage.intro,
   alternates: { canonical: "/conversar-e-ensinar/" },
 };
 
@@ -44,11 +43,14 @@ export default function TeachPage() {
             >
               {section.title}
             </h2>
-            <ul className="mt-5 list-disc space-y-3 pl-6">
+            <div className="mt-6 space-y-6">
               {section.items.map((item) => (
-                <li key={item}>{item}</li>
+                <div key={item.title}>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="mt-2">{item.body}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </section>
         );
       })}

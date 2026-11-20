@@ -15,7 +15,12 @@ export type Topic = {
   reviewedAt: string; // data ISO da última revisão
 };
 
+export type TeachSectionItem = {
+  title: string;
+  body: string;
+};
+
 export type TeachSection = {
   title: string;
-  items: string[];
+  items: TeachSectionItem[];
 };
