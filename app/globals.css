@@ -159,40 +159,6 @@
   --tc-fg: #f29bbb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) [data-topic] {
-    --tc-bg: color-mix(in srgb, var(--tc-fg) 16%, var(--surface));
-  }
-
-  :root:not([data-theme]) [data-topic="whatsapp-e-codigos"] {
-    --tc-fg: #6fcf97;
-  }
-
-  :root:not([data-theme]) [data-topic="dinheiro-a-receber"] {
-    --tc-fg: #f2b84b;
-  }
-
-  :root:not([data-theme]) [data-topic="links-qr-e-ligacoes"] {
-    --tc-fg: #8db8f2;
-  }
-
-  :root:not([data-theme]) [data-topic="senhas-e-duas-etapas"] {
-    --tc-fg: #bba4f5;
-  }
-
-  :root:not([data-theme]) [data-topic="wifi"] {
-    --tc-fg: #6bd0da;
-  }
-
-  :root:not([data-theme]) [data-topic="computador-e-celular"] {
-    --tc-fg: #aeb9cc;
-  }
-
-  :root:not([data-theme]) [data-topic="dados-de-terceiros"] {
-    --tc-fg: #f29bbb;
-  }
-}
-
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -581,19 +547,6 @@ details[open] .menu-panel {
     box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.65);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) .topic-card {
-      background-color: var(--surface-2);
-      box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
-    }
-
-    :root:not([data-theme]) .topic-card:hover,
-    :root:not([data-theme]) .topic-card:focus-visible {
-      background-color: color-mix(in srgb, white 8%, var(--surface-2));
-      box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.65);
-    }
-  }
-
   .soft-panel {
     box-shadow:
       0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent),
@@ -602,12 +555,6 @@ details[open] .menu-panel {
 
   [data-theme="dark"] .soft-panel {
     box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) .soft-panel {
-      box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.55);
-    }
   }
 
   @media (min-width: 640px) {
@@ -903,13 +850,6 @@ details[open] .menu-panel {
   color: var(--bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .topic-card:hover .topic-icon,
-  :root:not([data-theme]) .topic-card:focus-visible .topic-icon {
-    color: var(--bg);
-  }
-}
-
 @keyframes hero-orbit-spin {
   to {
     transform: rotate(360deg);
@@ -972,16 +912,16 @@ details[open] .menu-panel {
   transform: rotate(20deg);
 }
 
-.theme-toggle-dark {
+.theme-label-dark {
   display: none;
 }
 
-[data-theme="dark"] .theme-toggle-light {
+[data-theme="dark"] .theme-label-light {
   display: none;
 }
 
-[data-theme="dark"] .theme-toggle-dark {
-  display: inline-flex;
+[data-theme="dark"] .theme-label-dark {
+  display: inline;
 }
 
 @media (prefers-reduced-motion: reduce) {
