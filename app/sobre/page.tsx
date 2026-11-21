@@ -23,20 +23,29 @@ const uniqueSources = (sources: Source[]) =>
   Array.from(new Map(sources.map((source) => [source.url, source])).values());
 
 const sourceGroups = [
-  { title: "WhatsApp", sources: uniqueSources(topicSources("whatsapp-e-codigos")) },
-  { title: "Dinheiro a receber", sources: uniqueSources(topicSources("dinheiro-a-receber")) },
+  {
+    title: "WhatsApp: código e conta clonada",
+    sources: uniqueSources(topicSources("whatsapp-e-codigos")),
+  },
+  {
+    title: "Dinheiro a receber? Confirme antes de pagar",
+    sources: uniqueSources(topicSources("dinheiro-a-receber")),
+  },
   {
     title: "Links, QR Codes e ligações",
     sources: uniqueSources(topicSources("links-qr-e-ligacoes")),
   },
-  { title: "Senhas", sources: uniqueSources(topicSources("senhas-e-duas-etapas")) },
-  { title: "Wi-Fi", sources: uniqueSources(topicSources("wifi")) },
+  {
+    title: "Senhas e verificação em duas etapas",
+    sources: uniqueSources(topicSources("senhas-e-duas-etapas")),
+  },
+  { title: "Wi-Fi público e de casa", sources: uniqueSources(topicSources("wifi")) },
   {
     title: "Computador e celular",
     sources: uniqueSources(topicSources("computador-e-celular")),
   },
   {
-    title: "Dados de outras pessoas",
+    title: "Dados e fotos de outras pessoas",
     sources: uniqueSources(topicSources("dados-de-terceiros")),
   },
   { title: "Se algo deu errado", sources: uniqueSources(wrongPage.sources) },

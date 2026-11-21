@@ -3,30 +3,30 @@ import type { Topic } from "@/lib/types";
 export const topics: Topic[] = [
   {
     slug: "whatsapp-e-codigos",
-    title: "WhatsApp: código, número novo e conta clonada",
+    title: "WhatsApp: código e conta clonada",
     summary:
-      "Como manter sua conta sob seu controle e o que fazer diante de um pedido estranho.",
+      "Como manter sua conta sob seu controle e reconhecer pedidos de dinheiro em nome de conhecidos.",
     goodNews:
       "Dois hábitos resolvem a maior parte: nunca passar o código e confirmar por ligação antes de enviar dinheiro.",
     howItWorks:
-      "Cada conta de WhatsApp é liberada em um aparelho por um código enviado por SMS ou pelo próprio aplicativo. Quem consegue esse código consegue entrar na conta. Por isso ele é alvo de muitos golpes.",
+      "O WhatsApp libera cada conta em um aparelho por meio de um código enviado por SMS ou pelo próprio aplicativo. Quem consegue esse código consegue entrar na conta, e é por isso que ele é alvo de muitos golpes. Com a conta na mão, o golpista escreve para os seus contatos como se fosse você.",
     whatYouMightSee: [
       "Alguém se passa por responsável de uma escola, fala de uma vaga e pede o código que você recebeu. Há relatos desse golpe com professores da rede pública de São Paulo.",
-      "Uma mensagem com a foto de um parente, colega ou diretor diz que o número mudou e pede um Pix com urgência, às vezes explicando que o aplicativo do banco não funciona no número novo.",
+      "Uma mensagem com a foto de um parente, colega ou chefe diz que o número mudou e pede um Pix com urgência. Às vezes explica que o aplicativo do banco não funciona no número novo.",
       "Mensagens de contatos conhecidos pedindo dinheiro, porque a conta deles pode ter sido tomada.",
     ],
     whatToDo: [
       {
         items: [
-          "O código de verificação é só seu. Não passe para ninguém, em nenhuma situação.",
-          "Antes de qualquer Pix, ligue para a pessoa no número que você já tinha.",
+          "Não passe o código de verificação para ninguém, em nenhuma situação. O mesmo vale para o PIN da confirmação em duas etapas: o WhatsApp não inicia contato para pedir essas informações.",
+          "Antes de qualquer Pix, ligue para a pessoa no número que você já tinha. Uma ligação rápida desfaz a dúvida.",
           "Ative a confirmação em duas etapas do WhatsApp. Abra Configurações (no iPhone, Ajustes), toque em Conta, depois em Confirmação em duas etapas e em Ativar. Crie um PIN de seis dígitos e cadastre um e-mail para recuperá-lo se esquecer. Com o PIN, quem tentar cadastrar o seu número em outro aparelho não consegue entrar na conta.",
           "Desconfie de pressa. Quem precisa de ajuda de verdade aceita esperar você ligar.",
         ],
       },
     ],
     ifSomethingWentWrong: [
-      'Avise seus contatos por outro meio e siga o passo a passo da página "Se algo deu errado".',
+      'Avise seus contatos por outro meio, como uma ligação, para ninguém cair em pedidos feitos em seu nome, e siga o passo a passo da página "Se algo deu errado".',
     ],
     sources: [
       { label: "NC News: falsa oferta de emprego a professores", url: "https://ncnews.com.br/?p=47016" },
@@ -47,29 +47,30 @@ export const topics: Topic[] = [
   },
   {
     slug: "dinheiro-a-receber",
-    title: "Dinheiro a receber? Confirme antes de pagar qualquer coisa",
-    summary: "Um golpe que promete restituições e precatórios e já atingiu professores.",
+    title: "Dinheiro a receber? Confirme antes de pagar",
+    summary:
+      "Golpes que prometem restituições e precatórios e pedem uma taxa por Pix para liberar o valor.",
     goodNews:
       "A regra é simples e vale sempre: quem tem dinheiro a receber não precisa pagar nada antes.",
     howItWorks:
-      "Os golpistas entram em contato dizendo que há um valor a receber, às vezes com dados reais do processo, o que passa confiança. Depois pedem uma taxa, por Pix, para liberar o dinheiro.",
+      "Os golpistas entram em contato dizendo que há um valor para você, às vezes com dados reais do processo, o que passa confiança. Depois pedem uma taxa, por Pix, para liberar o dinheiro. O valor prometido não chega, e a taxa vai para o golpista.",
     whatYouMightSee: [
-      "Supostos advogados ligados a sindicatos de professores, ou pessoas que se dizem diretores e funcionários de sindicato.",
-      "Avisos de falsos pagamentos de restituições e precatórios.",
-      "Cobrança de uma taxa, como IOF, por Pix.",
+      "Supostos advogados ligados a sindicatos de professores, ou pessoas que se dizem diretores e funcionários de sindicato, avisando sobre pagamentos de restituições e precatórios. Os relatos citam professores, mas a história pode ser adaptada a qualquer pessoa que espere um valor a receber.",
+      "Uma taxa a pagar por Pix, como IOF, para liberar o dinheiro.",
+      "Dados reais do processo ou do seu nome, que dão aparência de verdade ao contato.",
     ],
     whatToDo: [
       {
         items: [
-          "Ninguém exige pagamento para liberar dinheiro.",
+          "Lembre que ninguém exige pagamento para liberar dinheiro a que você tem direito.",
           "Confirme ligando para o número oficial do sindicato ou do advogado, nunca pelo contato que veio na mensagem.",
           "Não clique em links nem baixe arquivos dessas mensagens.",
-          "Converse com colegas e com o sindicato antes de responder.",
+          "Converse com colegas e com o sindicato antes de responder: se o contato for falso, outras pessoas também podem ter recebido.",
         ],
       },
     ],
     ifSomethingWentWrong: [
-      'Se já pagou, avise o banco na hora, registre boletim de ocorrência e informe o sindicato. Veja a página "Se algo deu errado".',
+      'Se já pagou, avise o banco na hora e peça para contestar o Pix, registre boletim de ocorrência e informe o sindicato. O passo a passo completo está na página "Se algo deu errado".',
     ],
     sources: [
       {
@@ -85,28 +86,28 @@ export const topics: Topic[] = [
   },
   {
     slug: "links-qr-e-ligacoes",
-    title: "Links, QR Codes e ligações: como conferir antes de agir",
+    title: "Links, QR Codes e ligações",
     summary:
-      "Um jeito calmo de verificar mensagens, códigos QR e telefonemas que pedem informações suas.",
+      "Como conferir mensagens, códigos QR e telefonemas que pedem informações suas antes de agir.",
     goodNews:
       "Você não precisa reconhecer todos os golpes. Muitos dependem de pressa, e parar para conferir já funciona.",
     howItWorks:
-      "Links, QR Codes e ligações falsas tentam fazer você entregar dados, senhas ou dinheiro. Eles imitam bancos, lojas, transportadoras e até pessoas conhecidas.",
+      "Links, QR Codes e ligações falsas tentam fazer você entregar dados, senhas ou dinheiro. Eles imitam bancos, lojas, transportadoras e até pessoas conhecidas. O ponto em comum costuma ser a pressa: quem age sem conferir cai com mais facilidade.",
     whatYouMightSee: [
-      `Mensagens com urgência ou ameaça ("conta bloqueada", "pacote retido", "CPF irregular") ou com prêmio e dinheiro fácil.`,
+      `Mensagens com urgência ou ameaça, como "conta bloqueada", "pacote retido" ou "CPF irregular", ou com prêmio e dinheiro fácil.`,
       "Endereços parecidos com os verdadeiros, com uma letra trocada, como bancodobrasii.com no lugar de bancodobrasil.com.br.",
-      "QR Codes em adesivos colados sobre os originais, em mesas, cartazes, estacionamentos e boletos. Esse golpe se chama quishing.",
+      "QR Codes em adesivos colados sobre os originais, em mesas, cartazes, estacionamentos e boletos. Esse golpe se chama quishing e leva a uma página falsa ou a um Pix para a conta do golpista.",
       `Ligações de falsa central bancária ou de falso motoboy pedindo senha, código, instalação de aplicativo ou um "teste" de Pix.`,
       "Ligações e áudios com voz de parente imitada por inteligência artificial.",
     ],
     whatToDo: [
       {
         items: [
-          "No celular, segure o link para ver o endereço de destino. No computador, passe o mouse.",
-          "Na dúvida, não clique: abra o aplicativo ou digite o site oficial.",
+          "No celular, segure o link para ver o endereço de destino. No computador, passe o mouse sobre ele sem clicar.",
+          "Na dúvida, não clique: abra o aplicativo ou digite o endereço do site oficial.",
           "Mesmo vindo de conhecido, confirme por ligação, porque a conta dele pode estar clonada.",
-          "Antes de pagar por QR Code, confira o nome de quem recebe no aplicativo do banco.",
-          "Banco não pede senha, código, instalação de aplicativo nem teste de Pix por telefone. Desligue e ligue para o número do verso do cartão.",
+          "Antes de pagar por QR Code, confira no aplicativo do banco o nome de quem vai receber.",
+          "Lembre que banco não pede senha, código, instalação de aplicativo nem teste de Pix por telefone. Desligue e ligue para o número do verso do cartão.",
           "Combine uma palavra-chave com a família e, diante de uma voz suspeita, ligue de volta para o número conhecido.",
           "Para checar um link duvidoso, existem verificadores como o VirusTotal.",
         ],
@@ -128,7 +129,7 @@ export const topics: Topic[] = [
   {
     slug: "senhas-e-duas-etapas",
     title: "Senhas e verificação em duas etapas",
-    summary: "O básico que protege suas contas, sem precisar decorar nada.",
+    summary: "O básico para proteger suas contas, sem precisar decorar nada.",
     goodNews:
       "Com um gerenciador de senhas e a verificação em duas etapas, você não precisa decorar nada e já fica bem mais protegido.",
     howItWorks:
@@ -140,9 +141,9 @@ export const topics: Topic[] = [
     whatToDo: [
       {
         items: [
-          "Prefira uma frase longa a uma senha curta com símbolos.",
-          "Use senha diferente no e-mail, no banco e no WhatsApp.",
-          "Considere um gerenciador de senhas, que também ajuda a notar site falso.",
+          "Prefira uma frase longa a uma senha curta com símbolos: é mais fácil de lembrar e mais difícil de adivinhar.",
+          "Use uma senha diferente no e-mail, no banco e no WhatsApp.",
+          "Considere um gerenciador de senhas: ele guarda as senhas por você e ainda ajuda a notar site falso.",
           "Ative a verificação em duas etapas primeiro no e-mail principal, depois no WhatsApp e nos bancos.",
           "Mantenha a conta gov.br no nível ouro, como recomendam órgãos como o TJMG.",
         ],
@@ -165,33 +166,34 @@ export const topics: Topic[] = [
   },
   {
     slug: "wifi",
-    title: "Wi-Fi público e Wi-Fi de casa",
+    title: "Wi-Fi público e de casa",
     summary:
-      "Como usar redes abertas com tranquilidade e deixar a rede de casa bem configurada.",
+      "Como usar redes abertas com tranquilidade e deixar o Wi-Fi de casa bem configurado.",
     goodNews:
       "No dia a dia, o cuidado principal é simples: banco, Pix e compras ficam melhores no 4G ou 5G.",
     howItWorks:
-      "Redes abertas, em cafés, shoppings e praças, são compartilhadas por muita gente. Alguém pode criar uma rede com nome parecido ao do local, e o celular costuma conectar sozinho a redes que já conhece.",
+      "Redes abertas, em cafés, shoppings e praças, são compartilhadas por muita gente. Alguém pode criar uma rede com nome parecido ao do local, e o celular costuma conectar sozinho a redes que já conhece. Em casa, o roteador é a porta de entrada de todos os seus aparelhos, então vale deixá-lo bem configurado.",
     whatYouMightSee: [
       "Uma rede com nome quase igual ao do estabelecimento, ou o celular conectando sozinho a uma rede aberta.",
+      "Roteador de casa com a senha e o nome de fábrica.",
     ],
     whatToDo: [
       {
         heading: "Em rede pública",
         items: [
-          "Confirme o nome da rede com um funcionário do local.",
+          "Confirme o nome da rede com um funcionário do local antes de conectar, porque redes falsas copiam o nome do estabelecimento.",
           "Para banco, Pix e compras, use dados móveis (4G ou 5G) ou o roteamento do próprio celular.",
-          "Desative a conexão automática e esqueça a rede ao sair.",
-          "VPN é uma camada extra, não uma solução completa. Escolha um serviço confiável.",
-          "No Windows, escolha o perfil \"Rede pública\" ao conectar.",
+          "Desative a conexão automática e esqueça a rede ao sair. A CERT.br recomenda não permitir conexão automática a redes públicas nem às já visitadas, porque um atacante pode criar uma rede com o mesmo nome.",
+          "VPN é uma camada extra, não uma solução completa. Se usar, escolha um serviço confiável.",
+          "No Windows, escolha o perfil Rede pública ao conectar.",
         ],
       },
       {
         heading: "Na rede de casa",
         items: [
-          "Troque a senha padrão do roteador e o nome padrão da rede, e use senha forte no Wi-Fi.",
-          "Prefira criptografia WPA3 ou WPA2/WPA3. Não use WEP nem WPA.",
-          "Mantenha o roteador atualizado e use rede de visitantes com senha própria.",
+          "Troque a senha padrão do roteador e o nome padrão da rede, e use uma senha forte no Wi-Fi.",
+          "Prefira a criptografia WPA3 ou WPA2/WPA3. Não use WEP nem WPA.",
+          "Mantenha o roteador atualizado e use a rede de visitantes, com senha própria, para quem vem à sua casa.",
         ],
       },
     ],
@@ -213,8 +215,8 @@ export const topics: Topic[] = [
   },
   {
     slug: "computador-e-celular",
-    title: "Computador de casa e celular",
-    summary: "Hábitos de manutenção que evitam dor de cabeça e protegem seus arquivos.",
+    title: "Computador e celular",
+    summary: "Atualizações, backup e o que fazer se o celular for perdido ou roubado.",
     goodNews:
       "A maior parte do trabalho é configurar uma vez: atualização automática, backup e bloqueio de tela.",
     howItWorks:
@@ -225,8 +227,8 @@ export const topics: Topic[] = [
     whatToDo: [
       {
         items: [
-          "Computador usado por toda a família: contas separadas, bloqueio de tela e atualizações automáticas.",
-          "Faça backup automático dos arquivos importantes (provas, planejamentos, notas), com uma cópia fora do computador.",
+          "Se o computador é de toda a família, crie uma conta para cada pessoa, ative o bloqueio de tela e deixe as atualizações automáticas ligadas.",
+          "Faça backup automático dos arquivos importantes, como documentos, fotos e trabalhos, com uma cópia fora do computador.",
           "Evite programas piratas e downloads de sites desconhecidos. Instale aplicativos só nas lojas oficiais e desconfie de permissões incoerentes: um aplicativo de jogo não precisa da sua lista de chamadas.",
           "Deixe senha de tela e biometria ativadas e não deixe o celular desbloqueado em locais públicos.",
           "Cadastre o Celular Seguro, programa gratuito do Governo Federal (celularseguro.mj.gov.br ou aplicativo). Entre com a sua conta gov.br, toque em registrar telefone (o número precisa estar no seu CPF) e, se quiser, indique pessoas de confiança que poderão bloquear por você. Em caso de roubo, perda ou furto, você registra a ocorrência pelo site ou pelo aplicativo, e o programa bloqueia a linha e o acesso a aplicativos de bancos. Ele não rastreia o aparelho, então mantenha também o localizador do Android ou do iPhone.",
@@ -259,12 +261,14 @@ export const topics: Topic[] = [
     notice:
       "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte as regras da sua instituição ou um profissional da área.",
     summary:
-      "Como cuidar da privacidade de quem você conhece, de alunos a familiares e colegas.",
+      "Como cuidar da privacidade de quem você conhece, de familiares e amigos a colegas e alunos.",
     goodNews: "Um hábito resolve a maior parte: perguntar antes de postar e usar o canal certo.",
     howItWorks:
       "Fotos, contatos, conversas e documentos de outras pessoas ficam guardados no seu celular e no seu computador. Compartilhar sem cuidado pode expor quem confiou em você. Com crianças e adolescentes, o cuidado é maior: a LGPD (art. 14) pede que os dados deles sejam tratados no melhor interesse deles, e o ECA Digital (Lei 15.211/2025), em vigor desde 17/03/2026, reforça isso.",
     whatYouMightSee: [
-      "Fotos de crianças e adolescentes em perfil pessoal, grupos de WhatsApp sem regras, arquivos de crianças e adolescentes em pendrive ou no computador da família.",
+      "Foto de criança ou adolescente em perfil pessoal.",
+      "Grupos de WhatsApp sem regras, em que fotos e dados circulam à vontade.",
+      "Arquivos de outras pessoas, como documentos, em pendrive solto ou no computador da família.",
     ],
     whatToDo: [
       {
@@ -273,12 +277,12 @@ export const topics: Topic[] = [
           "Para fotos de crianças e adolescentes, o recomendado é ter autorização específica dos responsáveis, para uma finalidade e um canal definidos.",
           "Prefira fotos coletivas e evite marcar, nomear ou geolocalizar.",
           "Em escolas, trabalho e outras instituições, use os canais oficiais e moderados nos grupos de WhatsApp e evite publicar fotos de crianças e adolescentes em perfil pessoal.",
-          "Guarde arquivos de terceiros (notas, laudos, documentos) em local protegido por senha, e não em pendrive solto ou computador compartilhado.",
+          "Guarde documentos de terceiros em local protegido por senha, e não em pendrive solto ou computador compartilhado.",
         ],
       },
     ],
     ifSomethingWentWrong: [
-      "Retire a publicação, avise a coordenação e os responsáveis envolvidos.",
+      "Retire a publicação, avise as pessoas envolvidas (ou os responsáveis, se forem menores) e quem cuida dos dados na sua instituição.",
     ],
     sources: [
       {

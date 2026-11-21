@@ -5,12 +5,12 @@ export const wrongPage = {
   intro:
     "Respire. Isso acontece com muita gente, inclusive com quem entende de tecnologia. Golpistas usam técnicas pensadas para enganar, e cair não é falta de inteligência. O importante é agir com calma e na ordem abaixo.",
   steps: [
-    "Pare de responder e não envie mais dinheiro nem códigos.",
+    "Pare de responder e não envie mais dinheiro nem códigos. Não clique em novos links, mesmo que a pessoa diga que vai resolver.",
     "Avise o seu banco pelo aplicativo ou pelo número oficial e peça para contestar a transação. No Pix, procure \"Contestar esta transação\" no extrato ou na seção Pix (o nome pode variar de banco para banco): isso aciona o Mecanismo Especial de Devolução, do Banco Central, e vale por até 80 dias. Quanto antes, maior a chance de o dinheiro ainda estar na conta de destino. A devolução depende de o banco confirmar a fraude e de haver saldo, então não é garantida.",
-    "Troque as senhas, começando pelo e-mail principal, e ative a verificação em duas etapas.",
-    "Se o WhatsApp foi clonado, avise seus contatos por outro meio.",
-    "Guarde as provas: conversas, áudios, números de telefone, links e comprovantes.",
-    "Registre boletim de ocorrência.",
+    "Troque as senhas, começando pelo e-mail principal, e ative a verificação em duas etapas. O e-mail vem primeiro porque é por ele que se recuperam as outras contas.",
+    "Se o WhatsApp foi clonado, avise seus contatos por outro meio, como uma ligação, para ninguém cair em pedidos de dinheiro feitos em seu nome.",
+    "Guarde as provas: conversas, áudios, números de telefone, links e comprovantes. Prints e comprovantes ajudam o banco na análise.",
+    "Registre boletim de ocorrência, pela delegacia online do seu estado (se houver) ou em uma delegacia, e envie uma cópia ao banco para apoiar a análise.",
     "Se envolver dados ou fotos de outras pessoas, avise quem é responsável por eles, como a coordenação da escola ou o setor do seu trabalho.",
     "Se o celular foi roubado ou perdido, registre a ocorrência no Celular Seguro pelo site ou peça a uma pessoa de confiança cadastrada que faça pelo aplicativo.",
   ],
