@@ -29,10 +29,18 @@ export const topics: Topic[] = [
       'Avise seus contatos por outro meio e siga o passo a passo da página "Se algo deu errado".',
     ],
     sources: [
-      { label: "ncnews.com.br", url: "https://ncnews.com.br/?p=47016" },
+      { label: "NC News: falsa oferta de emprego a professores", url: "https://ncnews.com.br/?p=47016" },
       {
-        label: "tecnoblog.net",
+        label: "Tecnoblog: golpe do número novo no WhatsApp",
         url: "https://tecnoblog.net/noticias/golpe-via-whatsapp-usa-dados-vazados-e-pede-dinheiro-a-parentes-da-vitima/",
+      },
+      {
+        label: "TSE: confirmação em duas etapas no WhatsApp",
+        url: "https://www.tse.jus.br/comunicacao/noticias/arquivos/whatsapp-e-eleicoes-2020",
+      },
+      {
+        label: "Canaltech: como ativar a verificação em duas etapas",
+        url: "https://canaltech.com.br/apps/como-ativar-a-verificacao-em-duas-etapas-no-whatsapp/",
       },
     ],
     reviewedAt: "2026-11-18",
@@ -65,11 +73,11 @@ export const topics: Topic[] = [
     ],
     sources: [
       {
-        label: "canaltech.com.br",
+        label: "Canaltech: falsos pagamentos a professores",
         url: "https://canaltech.com.br/seguranca/golpe-via-e-mail-e-whatsapp-promete-falsos-pagamentos-a-professores-247815/",
       },
       {
-        label: "metropoles.com",
+        label: "Metrópoles: golpes contra professores do DF",
         url: "https://www.metropoles.com/distrito-federal/alerta-professores-do-df-sao-vitimas-de-9-tipos-de-golpes-veja-quais",
       },
     ],
@@ -108,10 +116,10 @@ export const topics: Topic[] = [
       "Se clicou, não digite nada, feche a página, troque as senhas das contas envolvidas e avise o banco se informou dados financeiros.",
     ],
     sources: [
-      { label: "serasa.com.br", url: "https://www.serasa.com.br/premium/blog/link-falso/" },
-      { label: "blog.pagbank.com.br", url: "https://blog.pagbank.com.br/o-que-e-quishing" },
+      { label: "Serasa: como identificar um link falso", url: "https://www.serasa.com.br/premium/blog/link-falso/" },
+      { label: "PagBank: o que é quishing", url: "https://blog.pagbank.com.br/o-que-e-quishing" },
       {
-        label: "olhardigital.com.br",
+        label: "Olhar Digital: golpe do QR Code",
         url: "https://olhardigital.com.br/2026/10/21/seguranca/golpe-do-qr-code-veja-como-criminosos-desviam-pagamentos-e-como-se-proteger/",
       },
     ],
@@ -145,11 +153,11 @@ export const topics: Topic[] = [
     ],
     sources: [
       {
-        label: "cartilha.cert.br",
+        label: "CERT.br: fascículo Senhas",
         url: "https://cartilha.cert.br/guardiao/fasciculo-senhas-egc-saida-grafica.pdf",
       },
       {
-        label: "tjmg.jus.br",
+        label: "TJMG: boas práticas de prevenção a golpes",
         url: "https://tjmg.jus.br/portal-tjmg/acoes-e-programas/tjmg-contra-golpes/boas-praticas-para-prevencao/",
       },
     ],
@@ -191,13 +199,13 @@ export const topics: Topic[] = [
       "Troque as senhas que usou na rede, principalmente a do e-mail e a do banco, e avise o banco se fez alguma operação financeira.",
     ],
     sources: [
-      { label: "cartilha.cert.br", url: "https://cartilha.cert.br/guardiao/fasciculo-redes-egc.pdf" },
+      { label: "CERT.br: fascículo Redes", url: "https://cartilha.cert.br/guardiao/fasciculo-redes-egc.pdf" },
       {
-        label: "serasa.com.br",
+        label: "Serasa: Wi-Fi público com segurança",
         url: "https://www.serasa.com.br/premium/blog/wi-fi-publico-como-usa-lo-com-seguranca-evitar-golpes/",
       },
       {
-        label: "exame.com",
+        label: "Exame: Wi-Fi público sem risco",
         url: "https://exame.com/tecnologia/examelab/wi-fi-publico-sem-risco-como-se-conectar-sem-entregar-suas-senhas/",
       },
     ],
@@ -229,14 +237,18 @@ export const topics: Topic[] = [
       "Registre a ocorrência no Celular Seguro pelo site (ou peça a uma pessoa de confiança cadastrada que faça pelo aplicativo), avise o banco e faça o boletim de ocorrência.",
     ],
     sources: [
-      { label: "cartilha.cert.br", url: "https://cartilha.cert.br/guardiao/fasciculo-backup-egc.pdf" },
+      { label: "CERT.br: fascículo Backup", url: "https://cartilha.cert.br/guardiao/fasciculo-backup-egc.pdf" },
       {
-        label: "gov.br",
+        label: "CERT.br: fascículo Computadores",
         url: "https://www.gov.br/governodigital/pt-br/privacidade-e-seguranca/fasciculos-cert.br/fasciculo-computadores.pdf",
       },
       {
-        label: "idec.org.br",
+        label: "IDEC: como funciona o Celular Seguro",
         url: "https://idec.org.br/dicas-e-direitos/celular-seguro-como-funciona",
+      },
+      {
+        label: "Governo Federal: serviço Celular Seguro",
+        url: "https://www.gov.br/pt-br/servicos/comunicar-roubo-furto-de-aparelho-pelo-aplicativo-celular-seguro",
       },
     ],
     reviewedAt: "2026-11-18",
@@ -270,11 +282,11 @@ export const topics: Topic[] = [
     ],
     sources: [
       {
-        label: "confidata.com.br",
+        label: "Confidata: ECA Digital e fotos de alunos",
         url: "https://confidata.com.br/blog/escola-pode-postar-foto-de-aluno-eca-digital",
       },
       {
-        label: "consed.org.br",
+        label: "CONSED: orientações sobre imagens e dados de alunos",
         url: "https://www.consed.org.br/storage/downloads/cZll9BOQjewTcaueobJyUxaDFP3SMuuuI8jK3Aqj.pdf",
       },
     ],

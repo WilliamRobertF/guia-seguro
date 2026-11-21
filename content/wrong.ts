@@ -11,19 +11,27 @@ export const wrongPage = {
     "Se o WhatsApp foi clonado, avise seus contatos por outro meio.",
     "Guarde as provas: conversas, áudios, números de telefone, links e comprovantes.",
     "Registre boletim de ocorrência.",
-    "Se envolver dados ou fotos de alunos, avise a coordenação.",
+    "Se envolver dados ou fotos de outras pessoas, avise quem é responsável por eles, como a coordenação da escola ou o setor do seu trabalho.",
     "Se o celular foi roubado ou perdido, registre a ocorrência no Celular Seguro pelo site ou peça a uma pessoa de confiança cadastrada que faça pelo aplicativo.",
   ],
   closing:
     "Contar o que aconteceu para alguém de confiança ajuda você e ajuda os outros a não caírem.",
   sources: [
     {
-      label: "progresso.com.br",
-      url: "https://progresso.com.br/index.php/2026/06/24/policia-cientifica-de-ms-orienta-idosos-a-reconhecer-golpes-digitais-no-junho-prata/",
+      label: "Agência Brasil: nova regra do Pix amplia o prazo para contestar golpe",
+      url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/nova-regra-do-pix-amplia-prazo-para-contestar-golpe",
     },
     {
-      label: "idec.org.br",
-      url: "https://idec.org.br/dicas-e-direitos/celular-seguro-como-funciona",
+      label: "TecMundo: botão para contestar Pix",
+      url: "https://www.tecmundo.com.br/mercado/407469-pix-ganha-botao-para-contestar-envios-errados-ou-golpes-saiba-como-usar.htm",
+    },
+    {
+      label: "Governo Federal: serviço Celular Seguro",
+      url: "https://www.gov.br/pt-br/servicos/comunicar-roubo-furto-de-aparelho-pelo-aplicativo-celular-seguro",
+    },
+    {
+      label: "O Progresso: Polícia Científica de MS sobre golpes",
+      url: "https://progresso.com.br/index.php/2026/06/24/policia-cientifica-de-ms-orienta-idosos-a-reconhecer-golpes-digitais-no-junho-prata/",
     },
   ] as Source[],
   reviewedAt: "2026-11-18",

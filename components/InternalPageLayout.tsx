@@ -18,6 +18,8 @@ export function InternalPageLayout({
   indexItems,
   children,
 }: InternalPageLayoutProps) {
+  const showIndex = indexItems.length >= 3;
+
   return (
     <main id="conteudo" className="shell-internal pb-16" tabIndex={-1}>
       <header className="max-w-[44rem] pt-10 sm:pt-14">
@@ -31,9 +33,15 @@ export function InternalPageLayout({
         {subtitle ? <p className="mt-5 text-xl text-muted">{subtitle}</p> : null}
       </header>
 
-      <div className="mt-10 lg:mt-12 lg:grid lg:grid-cols-[minmax(0,44rem)_16rem] lg:justify-between lg:gap-8">
-        <PageIndex items={indexItems} />
-        <div className="min-w-0 lg:order-1">{children}</div>
+      <div
+        className={`mt-10 lg:mt-12 ${
+          showIndex ? "lg:grid lg:grid-cols-[minmax(0,44rem)_16rem] lg:justify-between lg:gap-8" : ""
+        }`}
+      >
+        {showIndex ? <PageIndex items={indexItems} /> : null}
+        <div className={`min-w-0 ${showIndex ? "lg:order-1" : "max-w-[44rem]"}`}>
+          {children}
+        </div>
       </div>
     </main>
   );

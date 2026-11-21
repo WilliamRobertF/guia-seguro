@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-variant-numeric: normal;
+  font-feature-settings: "zero" 0;
+}
+
 :root {
   color-scheme: light;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);

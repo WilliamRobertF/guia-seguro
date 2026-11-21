@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InternalPageLayout } from "@/components/InternalPageLayout";
-import { SourceList } from "@/components/SourceList";
 import { aboutPage } from "@/content/about";
+import { studentsPage } from "@/content/students";
 import { teachPage } from "@/content/teach";
 import { topics } from "@/content/topics";
 import { wrongPage } from "@/content/wrong";
@@ -16,16 +16,33 @@ export const metadata: Metadata = {
   alternates: { canonical: "/sobre/" },
 };
 
-const allSources: Source[] = [
-  ...topics.flatMap((topic) => topic.sources),
-  ...wrongPage.sources,
-  ...teachPage.sources,
-  { label: "cartilha.cert.br", url: "https://cartilha.cert.br/" },
-];
+const topicSources = (slug: string) =>
+  topics.find((topic) => topic.slug === slug)?.sources ?? [];
 
-const uniqueSources = Array.from(
-  new Map(allSources.map((source) => [source.url, source])).values(),
-);
+const uniqueSources = (sources: Source[]) =>
+  Array.from(new Map(sources.map((source) => [source.url, source])).values());
+
+const sourceGroups = [
+  { title: "WhatsApp", sources: uniqueSources(topicSources("whatsapp-e-codigos")) },
+  { title: "Dinheiro a receber", sources: uniqueSources(topicSources("dinheiro-a-receber")) },
+  {
+    title: "Links, QR Codes e ligações",
+    sources: uniqueSources(topicSources("links-qr-e-ligacoes")),
+  },
+  { title: "Senhas", sources: uniqueSources(topicSources("senhas-e-duas-etapas")) },
+  { title: "Wi-Fi", sources: uniqueSources(topicSources("wifi")) },
+  {
+    title: "Computador e celular",
+    sources: uniqueSources(topicSources("computador-e-celular")),
+  },
+  {
+    title: "Dados de outras pessoas",
+    sources: uniqueSources(topicSources("dados-de-terceiros")),
+  },
+  { title: "Se algo deu errado", sources: uniqueSources(wrongPage.sources) },
+  { title: "Conversar e ensinar", sources: uniqueSources(teachPage.sources) },
+  { title: "Para jovens", sources: uniqueSources(studentsPage.sources) },
+];
 
 const indexItems = [
   { id: "privacidade", label: "Privacidade" },
@@ -76,7 +93,32 @@ export default function AboutPage() {
         <p className="text-[1.0625rem] text-ink-soft">
           Última atualização do conteúdo: {formatDate(aboutPage.reviewedAt)}.
         </p>
-        <SourceList sources={uniqueSources} id="fontes" />
+        <section id="fontes" aria-labelledby="fontes-titulo" className="mt-10 scroll-mt-6" tabIndex={-1}>
+          <h2 id="fontes-titulo" className="text-xl font-bold">
+            Fontes
+          </h2>
+          <div className="mt-6 space-y-10">
+            {sourceGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-xl font-bold">{group.title}</h3>
+                <ul className="mt-4 space-y-4">
+                  {group.sources.map((source) => (
+                    <li key={source.url} className="min-w-0">
+                      <a
+                        className="link font-bold [overflow-wrap:anywhere]"
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
       </footer>
     </InternalPageLayout>
   );
