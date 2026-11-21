@@ -261,7 +261,7 @@ export const topics: Topic[] = [
     notice:
       "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte um profissional da área.",
     summary:
-      "Como cuidar da privacidade de quem você conhece, de familiares e amigos a colegas e alunos.",
+      "Como cuidar da privacidade de quem você conhece, de familiares e amigos a conhecidos.",
     goodNews: "Um hábito resolve a maior parte: perguntar antes de postar e usar o canal certo.",
     howItWorks:
       "Fotos, contatos, conversas e documentos de outras pessoas ficam guardados no seu celular e no seu computador. Compartilhar sem cuidado pode expor quem confiou em você. Com crianças e adolescentes, o cuidado é maior: a LGPD (art. 14) pede que os dados deles sejam tratados no melhor interesse deles, e o ECA Digital (Lei 15.211/2025), em vigor desde 17/03/2026, reforça isso.",
