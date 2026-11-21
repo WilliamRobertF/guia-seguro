@@ -259,7 +259,7 @@ export const topics: Topic[] = [
     slug: "dados-de-terceiros",
     title: "Dados e fotos de outras pessoas",
     notice:
-      "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte as regras da sua instituição ou um profissional da área.",
+      "Orientação geral, não é parecer jurídico. Em caso de dúvida, consulte um profissional da área.",
     summary:
       "Como cuidar da privacidade de quem você conhece, de familiares e amigos a colegas e alunos.",
     goodNews: "Um hábito resolve a maior parte: perguntar antes de postar e usar o canal certo.",
