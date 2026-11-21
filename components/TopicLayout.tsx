@@ -48,7 +48,6 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
     <InternalPageLayout
       title={topic.title}
       subtitle={topic.summary}
-      icon={<TopicIcon slug={topic.slug} size="header" />}
       indexItems={contents}
       breadcrumb={
         <nav aria-label="Você está aqui" className="no-print text-[1.0625rem]">
