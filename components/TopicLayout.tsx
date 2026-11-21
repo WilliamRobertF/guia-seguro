@@ -174,7 +174,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         <SourceList sources={topic.sources} />
 
         <nav aria-label="Navegação entre temas" className="mt-12 border-t border-line pt-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="flex flex-wrap gap-3">
             <Link className="button button-quiet topic-nav-button" href="/#temas">
               Voltar para os temas
               <LinkStatus />
@@ -183,7 +183,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
               className="button button-quiet topic-nav-button"
               href={`/temas/${nextTopic.slug}/`}
             >
-              <span>Próximo tema: {nextTopic.title}</span>
+              <span>Próximo tema</span>
               <LinkStatus />
             </Link>
           </div>

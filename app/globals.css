@@ -479,12 +479,6 @@ details[open] .menu-panel {
     padding: 0.5rem 1.05rem;
   }
 
-  @media (max-width: 639px) {
-    .topic-nav-button {
-      width: 100%;
-    }
-  }
-
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
