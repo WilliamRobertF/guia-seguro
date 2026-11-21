@@ -472,6 +472,18 @@ details[open] .menu-panel {
     color: var(--ink);
   }
 
+  .topic-nav-button {
+    width: auto;
+    min-height: 44px;
+    padding: 0.5rem 1.05rem;
+  }
+
+  @media (max-width: 639px) {
+    .topic-nav-button {
+      width: 100%;
+    }
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }

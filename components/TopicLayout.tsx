@@ -4,7 +4,6 @@ import { formatDate } from "@/lib/date";
 import { InternalPageLayout } from "./InternalPageLayout";
 import { LinkStatus } from "./LinkStatus";
 import { SourceList } from "./SourceList";
-import { TopicIcon } from "./TopicIcon";
 
 function CheckIcon({ className = "mt-1" }: { className?: string }) {
   return (
@@ -176,15 +175,14 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
 
         <nav aria-label="Navegação entre temas" className="mt-12 border-t border-line pt-6">
           <div className="grid gap-3 sm:grid-cols-2">
-            <Link className="button button-quiet w-full" href="/#temas">
+            <Link className="button button-quiet topic-nav-button" href="/#temas">
               Voltar para os temas
               <LinkStatus />
             </Link>
             <Link
-              className="button button-quiet w-full"
+              className="button button-quiet topic-nav-button"
               href={`/temas/${nextTopic.slug}/`}
             >
-              <TopicIcon slug={nextTopic.slug} size="xs" />
               <span>Próximo tema: {nextTopic.title}</span>
               <LinkStatus />
             </Link>
