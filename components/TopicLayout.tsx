@@ -174,7 +174,7 @@ export function TopicLayout({ topic, nextTopic }: TopicLayoutProps) {
         <SourceList sources={topic.sources} />
 
         <nav aria-label="Navegação entre temas" className="mt-12 border-t border-line pt-6">
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link className="button button-quiet topic-nav-button" href="/#temas">
               Voltar para os temas
               <LinkStatus />
